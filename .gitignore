@@ -1,0 +1,74 @@
+# Общие исключения для Python проектов
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+*.eggs/
+*.pkl
+
+# Виртуальные окружения
+env/
+venv/
+ENV/
+.venv/
+.ENV/
+
+# Лог-файлы
+*.log
+*.out
+*.err
+
+# Конфигурационные файлы IDE и редакторов
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Исключения для FastAPI
+instance/
+tmp/
+*.db
+
+# Исключение для базы данных SQLite
+*.sqlite3
+
+# Исключения для сторонних библиотек и зависимостей
+*.DS_Store
+*.coverage
+*.pyc
+*.pyo
+coverage_html_report/
+htmlcov/
+site/
+dist/
+build/
+*.egg-info/
+
+# Исключение для Docker (если используется)
+docker-compose.override.yml
+*.env
+.env.* 
+
+# Исключения для зависимостей
+# (если используете pipenv или poetry)
+Pipfile
+Pipfile.lock
+poetry.lock
+
+# Исключения для тестов и отчетов
+pytest_cache/
+.tox/
+.mypy_cache/
+.cache/
+__snapshots__/
+
+# Исключение для Jupyter Notebook
+.ipynb_checkpoints/
+
+# Исключение для настроек и файлов хранения данных
+*.sqlite3
+*.db
+*.bak
