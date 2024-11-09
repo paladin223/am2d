@@ -1,9 +1,11 @@
 from fastapi import FastAPI
 from fastapi import Request
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="pages")
 
@@ -14,7 +16,6 @@ async def read_root(request: Request):
         "index.html",
         {
             "request": request,
-            "title": "Добро пожаловать в FastAPI",
-            "message": "Это приложение использует шаблоны Jinja2",
+            "title": "am2d",
         },
     )

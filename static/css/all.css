@@ -1,0 +1,86 @@
+* {
+    border:  0;
+    margin:  0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'TT Commons';
+    src: url('../fonts/TTCommons-Regular.woff2') format('woff2'),
+         url('../fonts/TTCommons-Regular.woff') format('woff'),
+         url('../fonts/TTCommons-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TTCommons-Bold';
+    src: url('../fonts/TTCommons-Bold.woff2') format('woff2'),
+         url('../fonts/TTCommons-Bold.woff') format('woff'),
+         url('../fonts/TTCommons-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    height: 2000px;
+}
+
+div {
+    font-family: 'TT Commons';
+}
+
+header {
+    background-image: url("../img/background_header.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    transition: background-position 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_logo_img {
+    width: 470px;
+    height: 109px;
+}
+
+.nav_buttons{
+    margin-top: 10px;
+    width: 470px;
+    gap: 40px;
+    display: flex;
+    justify-content: center
+}
+
+.nav_button{
+    color:  #EAE4D6;
+    font-size: 23px;
+}
+
+.header_make_order_button {
+    font-family: 'TTCommons-Bold';
+    color: #EAE4D6;
+    border: 5px solid #EAE4D6;
+    font-size: 32px;
+    border-radius: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0 100px 0;
+
+    width: 470px;
+    height: 60px;
+
+}

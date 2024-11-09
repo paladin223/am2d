@@ -3,12 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Название страницы</title>
+    <title>{{ title }}</title>
     <meta name="description" content="Краткое описание страницы">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script> 
+    <link rel="stylesheet" href="../static/css/all.css">
 </head>
 <body>
-    <h1>Hello world!</h1>
+    <header>
+        <nav>
+            <div class="header_logo"><img src="../static/img/light_logo.png" class="header_logo_img"></div>
+            <div class="nav_buttons">
+                <div class="nav_button">О нас</div>
+                <div class="nav_button">Услуги</div>
+                <div class="nav_button">Контакты</div>
+                <div class="nav_button">Проекты</div>
+            </div>
+        </nav>
+        <div class="header_make_order_button"><span>Заказать дизайн-проект</span></div>
+    </header>
+<script>
+    function updateBackgroundPosition() {
+    const imageBlock = document.querySelector('header');
+    const width = window.innerWidth;
+
+    if (width <= 768) {
+        imageBlock.style.backgroundPosition = 'right';
+    } else {
+        imageBlock.style.backgroundPosition = 'center';
+    }
+    }
+
+    // Обновляем позицию фона при загрузке страницы
+    updateBackgroundPosition();
+
+    // Обновляем позицию фона при изменении размера окна
+    window.addEventListener('resize', updateBackgroundPosition);
+</script>
 </body>
 </html>
