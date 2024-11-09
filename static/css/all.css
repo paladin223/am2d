@@ -43,6 +43,7 @@ header {
 }
 
 nav {
+    margin-top: 50px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -72,15 +73,13 @@ nav {
     font-family: 'TTCommons-Bold';
     color: #EAE4D6;
     border: 5px solid #EAE4D6;
-    font-size: 32px;
+    font-size: 28px;
     border-radius: 40px;
+    padding: 20px 50px 17px 50px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto 0 100px 0;
+    margin: auto 0 50px 0;
+}
 
-    width: 470px;
-    height: 60px;
-
+.header_make_order_button span {
+    text-align: center;
 }
