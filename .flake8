@@ -1,8 +1,8 @@
 [flake8]
+exclude =
+     venv/,
+     */migrations/
 ignore=N802,A003,R504
 import-order-style = google
 inline-quotes = double
 application-import-names = database,models,config,schemas,crud
-exclude =
-     venv/,
-     */migrations/
