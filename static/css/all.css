@@ -22,10 +22,6 @@
     font-style: normal;
 }
 
-body {
-    height: 2000px;
-}
-
 div {
     font-family: 'TT Commons';
 }
@@ -83,3 +79,97 @@ nav {
 .header_make_order_button span {
     text-align: center;
 }
+
+main {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: #ffffff;
+}
+
+.main_left {
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: left;
+    flex-direction: column;
+    padding: 0 0 30px 30px;
+}
+
+.main_right {
+    width: 40%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.main_right_button {
+    padding: 20px 50px;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin: 0 0 30px 0;
+}
+
+section {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color:  #EAE4D6;
+}
+
+.section_left {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: left;
+    flex-direction: column;
+    padding: 0 0 30px 30px;
+}
+
+.section_right {
+    width: 70%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0 30px 30px 0;
+}
+
+.section_right_button {
+    padding: 20px 50px;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.text_descripton {
+    height: 300px;
+    width: 100%;
+    background-color: rgb(255, 206, 127);
+}
+
+.project_slider {
+    height: 100vh;
+    display: flex;
+}
+.project_slider_left {
+    width: 30%;
+    background-color: aquamarine;
+}
+.project_slider_middle {
+    width: 40%;
+    background-color: beige;
+}
+.project_slider_right {
+    width: 30%;
+    background-color: aquamarine;
+}
+
+.project_request {
+    height: 500px;
+    background-color: #4a4947;
+}
+
+footer {
+    height: 250px;
+    background-color: black;
+}
+

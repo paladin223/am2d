@@ -6,6 +6,7 @@
     <title>{{ title }}</title>
     <meta name="description" content="Краткое описание страницы">
     <link rel="stylesheet" href="../static/css/all.css">
+    <script src="../static/js/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -20,23 +21,33 @@
         </nav>
         <div class="header_make_order_button">Заказать дизайн-проект</div>
     </header>
-    <script>
-        function updateBackgroundPosition() {
-        const imageBlock = document.querySelector('header');
-        const width = window.innerWidth;
-
-        if (width <= 768) {
-            imageBlock.style.backgroundPosition = 'right';
-        } else {
-            imageBlock.style.backgroundPosition = 'center';
-        }
-        }
-
-        // Обновляем позицию фона при загрузке страницы
-        updateBackgroundPosition();
-
-        // Обновляем позицию фона при изменении размера окна
-        window.addEventListener('resize', updateBackgroundPosition);
-    </script>
+    <main>
+        <div class="main_left">
+            <div class="main_left_project_name">Название проекта</div>
+            <div class="main_left_project_description">краткая информация о проекте</div>
+        </div>
+        <div class="main_right">
+            <div class="main_right_button">Перейти к проекту</div>
+        </div>
+    </main>
+    <section>
+        <div class="section_left">
+            <div class="section_left_project_name">Название проекта</div>
+            <div class="section_left_project_description">краткая информация о проекте</div>
+        </div>
+        <div class="section_right">
+            <div class="section_right_button">Перейти к проекту</div>
+        </div>
+    </section>
+    <div class="text_descripton">
+        <!--  -->
+    </div>
+    <div class="project_slider">
+        <div class="project_slider_left"></div>
+        <div class="project_slider_middle"></div>
+        <div class="project_slider_right"></div>
+    </div>
+    <div class="project_request"></div>
+    <footer></footer>
 </body>
 </html>
