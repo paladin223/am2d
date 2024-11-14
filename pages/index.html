@@ -1,53 +1,53 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <meta name="description" content="Краткое описание страницы">
-    <link rel="stylesheet" href="../static/css/all.css">
-    <script src="../static/js/script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <meta name="description" content="Краткое описание страницы">
+  <link rel="stylesheet" href="../static/css/all.css">
+  <script src="../static/js/script.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="header_logo"><img src="../static/img/light_logo.png" class="header_logo_img"></div>
-            <div class="nav_buttons">
-                <div class="nav_button">О нас</div>
-                <div class="nav_button">Услуги</div>
-                <div class="nav_button">Контакты</div>
-                <div class="nav_button">Проекты</div>
-            </div>
-        </nav>
-        <div class="header_make_order_button">Заказать дизайн-проект</div>
-    </header>
-    <main>
-        <div class="main_left">
-            <div class="main_left_project_name">Название проекта</div>
-            <div class="main_left_project_description">краткая информация о проекте</div>
-        </div>
-        <div class="main_right">
-            <div class="main_right_button">Перейти к проекту</div>
-        </div>
-    </main>
-    <section>
-        <div class="section_left">
-            <div class="section_left_project_name">Название проекта</div>
-            <div class="section_left_project_description">краткая информация о проекте</div>
-        </div>
-        <div class="section_right">
-            <div class="section_right_button">Перейти к проекту</div>
-        </div>
-    </section>
-    <div class="text_descripton">
-        <!--  -->
+  <header>
+    <nav>
+      <div class="header_logo"><img src="../static/img/light_logo.png" class="header_logo_img"></div>
+      <div class="nav_buttons">
+        <div class="nav_button">О нас</div>
+        <div class="nav_button">Услуги</div>
+        <div class="nav_button">Контакты</div>
+        <div class="nav_button">Проекты</div>
+      </div>
+    </nav>
+    <div class="header_make_order_button">Заказать дизайн-проект</div>
+  </header>
+  <main>
+    <div class="main_left">
+      <div class="main_left_project_name">Название проекта</div>
+      <div class="main_left_project_description">краткая информация о проекте</div>
     </div>
-    <div class="project_slider">
-        <div class="project_slider_left"></div>
-        <div class="project_slider_middle"></div>
-        <div class="project_slider_right"></div>
+    <div class="main_right">
+      <div class="main_right_button">Перейти к проекту</div>
     </div>
-    <div class="project_request"></div>
-    <footer></footer>
+  </main>
+  <section>
+    <div class="section_left">
+      <div class="section_left_project_name">Название проекта</div>
+      <div class="section_left_project_description">краткая информация о проекте</div>
+    </div>
+    <div class="section_right">
+      <div class="section_right_button">Перейти к проекту</div>
+    </div>
+  </section>
+  <div class="text_descripton">
+      <!--  -->
+  </div>
+  <div class="project_slider">
+    <div class="project_slider_left"></div>
+    <div class="project_slider_middle"></div>
+    <div class="project_slider_right"></div>
+  </div>
+  <div class="project_request"></div>
+  <footer>{% include 'footer.html' %}</footer>
 </body>
 </html>
