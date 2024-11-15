@@ -362,9 +362,21 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* project_request */
+    .project_request {
+        flex-direction: column;
+        height: auto;
+        flex-flow: row wrap;
+    }
+
+    .project_request > * {
+        flex: 1 100%;
+    }
+
+    /* footer */
     footer {
-        flex-direction: column; /* Изменяем направление на колонну */
-        height: auto; /* Высота будет зависеть от содержимого */
+        flex-direction: column;
+        height: auto;
         flex-flow: row wrap;
     }
 
