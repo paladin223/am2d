@@ -18,7 +18,7 @@ async def read_root(request: Request):
     ]
     right_images = [
         "/static/img/section2_right.jpg",
-        "/static/img/bordo80/footer_midle.jpg",
+        "/static/img/bordo80/footer_middle.jpg",
     ]
     return templates.TemplateResponse(
         "index.html",

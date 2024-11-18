@@ -25,6 +25,15 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'TTCommons-Thin';
+    src: url('../fonts/TTCommons-Thin.woff2') format('woff2'),
+         url('../fonts/TTCommons-Thin.woff') format('woff'),
+         url('../fonts/TTCommons-Thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 div {
     font-family: 'TT Commons';
 }
@@ -226,26 +235,62 @@ section {
 }
 
 .text_descripton {
-    height: 300px;
+    height: 450px;
     width: 100%;
-    background-color: beige;
+    background-color: #EAE4D6;
+    font-size: 60px;
+    font-family: 'TTCommons-Thin';
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+.text_descripton b {
+    font-family: 'TT Commons';
+    font-weight: normal;
+}
+
+/* project_slider */
+
 .project_slider {
-    height: 100vh;
+    height: 80vh;
     display: flex;
 }
+
 .project_slider_left {
     width: 30%;
-    background-color: rgb(48, 48, 48);
+    height: 100%;
 }
+
+.project_slider_left img {
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+}
+
 .project_slider_middle {
     width: 40%;
-    background-color: beige;
+    height: 100%;
 }
+
+.project_slider_middle img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
 .project_slider_right {
     width: 30%;
-    background-color: rgb(48, 48, 48);
+    height: 100%;
+}
+
+.project_slider_right img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: right;
 }
 
 /* project_request */
@@ -298,6 +343,7 @@ section {
     align-items: center;
     justify-content: space-between;
     position: relative;
+    color: black;
 }
 
 .contact_form input, textarea {
@@ -310,7 +356,7 @@ section {
 
 .contact_form .contact_form_text{
     height: 23%;
-    width: 48%;
+    width: 50%;
     padding: 1% 1%;
     border-radius: 0 20px 20px 20px;
     display: flex;
