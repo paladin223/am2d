@@ -12,10 +12,20 @@ templates = Jinja2Templates(directory="pages")
 
 @app.get("/", response_class=JSONResponse)
 async def read_root(request: Request):
+    left_images = [
+        "/static/img/section2_left.jpg",
+        "/static/img/bordo80/footer_left.jpg"
+    ]
+    right_images = [
+        "/static/img/section2_right.jpg",
+        "/static/img/bordo80/footer_midle.jpg",
+    ]
     return templates.TemplateResponse(
         "index.html",
         {
             "request": request,
             "title": "am2d",
+            "left_images": left_images,
+            "right_images": right_images
         },
     )

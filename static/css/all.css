@@ -2,6 +2,9 @@
     border:  0;
     margin:  0;
     padding: 0;
+    box-sizing: border-box;
+    text-decoration: none; 
+    color: inherit;
 }
 
 @font-face {
@@ -94,36 +97,71 @@ main {
     align-items: left;
     flex-direction: column;
     padding: 0 0 30px 30px;
+    background-image: url("../img/main_left.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main_left_project_name {
+    font-size: 50px;
+    font-family: 'TTCommons-Bold';
+    color: #EAE4D6;
+    
+}
+
+.main_left_project_description {
+    color: #EAE4D6;
+    font-size: 30px;
 }
 
 .main_right {
     width: 40%;
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    position: relative; 
+}
+
+.main_right img {
+    max-width: 400px; 
+    max-height: 400px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .main_right_button {
-    padding: 20px 50px;
+    position: absolute; 
+    bottom: 5%; 
+    padding: 15px 40px;
     border: 3px solid black;
-    border-radius: 10px;
-    margin: 0 0 30px 0;
+    border-radius: 40px;
+    font-size: 20px;
+    font-family: 'TTCommons-Bold';
+    color: black;
 }
 
 section {
     display: flex;
     height: 100vh;
     width: 100%;
-    background-color:  #EAE4D6;
+    background-color: #ffffff;
+    position: relative; 
 }
 
 .section_left {
     width: 30%;
     display: flex;
     justify-content: flex-end;
-    align-items: left;
+    align-items: flex-start;
     flex-direction: column;
-    padding: 0 0 30px 30px;
+    padding: 30px;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+    margin-right: 1px;
 }
 
 .section_right {
@@ -131,19 +169,66 @@ section {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    padding: 0 30px 30px 0;
+    padding: 30px;
+    background-size: cover; 
+    background-position: center; 
+    transition: background-image 1s ease;
 }
+
+.section_left_project_name,
+.section_left_project_description {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section_left_project_name {
+    font-size: 40px;
+    font-family: 'TTCommons-Bold';
+}
+
+.section_left_project_description {
+    font-size: 20px;
+    font-family: 'TT Commons';
+}
+
 
 .section_right_button {
     padding: 20px 50px;
-    border: 3px solid black;
     border-radius: 10px;
+    cursor: pointer;
+    border: 3px solid black;
+    border-radius: 40px;
+    font-size: 20px;
+    font-family: 'TTCommons-Bold';
+    color: black;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    font-weight: thin;
+    font-size: 50px; 
+    z-index: 10; 
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
 }
 
 .text_descripton {
     height: 300px;
     width: 100%;
-    background-color: rgb(255, 206, 127);
+    background-color: beige;
 }
 
 .project_slider {
@@ -152,7 +237,7 @@ section {
 }
 .project_slider_left {
     width: 30%;
-    background-color: aquamarine;
+    background-color: rgb(48, 48, 48);
 }
 .project_slider_middle {
     width: 40%;
@@ -160,7 +245,7 @@ section {
 }
 .project_slider_right {
     width: 30%;
-    background-color: aquamarine;
+    background-color: rgb(48, 48, 48);
 }
 
 /* project_request */
@@ -237,13 +322,13 @@ section {
 
 .placeholder {
     position: absolute;
-    top: 50%; /* Центрируем по вертикали */
-    left: 50%; /* Центрируем по горизонтали */
-    transform: translate(-50%, -50%); /* Сдвигаем на половину ширины и высоты */
-    color: #aaa; /* Цвет плейсхолдера */
-    pointer-events: none; /* Игнорировать события мыши */
-    transition: 0.2s; /* Плавный переход */
-    font-size: 14px; /* Размер шрифта плейсхолдера */
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: #aaa; 
+    pointer-events: none; 
+    transition: 0.2s; 
+    font-size: 14px; 
 }
 
 .contact_form div {
@@ -292,7 +377,6 @@ footer {
 
 .footer_logo_img{
     width: 60%;
-    /* object-fit: cover; */
 }
 
 .footer_logo div {

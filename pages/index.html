@@ -6,6 +6,10 @@
   <title>{{ title }}</title>
   <meta name="description" content="Краткое описание страницы">
   <link rel="stylesheet" href="../static/css/all.css">
+  <script>
+    const leftImages = {{ left_images|tojson }};
+    const rightImages = {{ right_images|tojson }};
+  </script>
   <script src="../static/js/script.js" defer></script>
 </head>
 <body>
@@ -23,11 +27,12 @@
   </header>
   <main>
     <div class="main_left">
-      <div class="main_left_project_name">Название проекта</div>
+      <div class="main_left_project_name">НАЗВАНИЕ ПРОЕКТА</div>
       <div class="main_left_project_description">краткая информация о проекте</div>
     </div>
     <div class="main_right">
-      <div class="main_right_button">Перейти к проекту</div>
+      <img src="../static/img/main_right.jpg">
+      <div class="main_right_button">ПЕРЕЙТИ К ПРОЕКТУ</div>
     </div>
   </main>
   <section>
@@ -36,8 +41,10 @@
       <div class="section_left_project_description">краткая информация о проекте</div>
     </div>
     <div class="section_right">
-      <div class="section_right_button">Перейти к проекту</div>
+      <div class="section_right_button">ПЕРЕЙТИ К ПРОЕКТУ</div>
     </div>
+    <button class="prev" onclick="prevImage()">&#10094;</button> <!-- Кнопка "Назад" -->
+    <button class="next" onclick="nextImage()">&#10095;</button> <!-- Кнопка "Вперед" -->
   </section>
   <div class="text_descripton">
       <!--  -->
