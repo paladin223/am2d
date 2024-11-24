@@ -15,9 +15,7 @@ updateBackgroundPosition();
 window.addEventListener('resize', updateBackgroundPosition);
 
 const textarea = document.getElementsByClassName('contact_form_text')[0];
-const placeholder = document.getElementsByClassName('placeholder')[0];
-console.log(textarea)
-
+const placeholder = document.getElementsByClassName('placeholder')[0];s
 
 // Функция для обновления видимости плейсхолдера
 function updatePlaceholder() {
