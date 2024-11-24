@@ -52,7 +52,7 @@ header {
 
 nav {
     margin-top: 50px;
-    width: 100%;
+    max-width: 40%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,30 +60,31 @@ nav {
 }
 
 .header_logo_img {
-    width: 470px;
-    height: 109px;
+    max-width: 470px;
+    max-height: 100px;
+    width: 100%;
 }
 
 .nav_buttons{
     margin-top: 10px;
     width: 470px;
-    gap: 40px;
+    gap: 5%;
     display: flex;
     justify-content: center
 }
 
 .nav_button{
     color:  #EAE4D6;
-    font-size: 23px;
+    font-size: clamp(1.5vw, 1.75vw, 30px);
 }
 
 .header_make_order_button {
     font-family: 'TTCommons-Bold';
     color: #EAE4D6;
     border: 3px solid #EAE4D6;
-    font-size: 28px;
+    font-size: clamp(1.5vw, 1.75vw, 2vw);;
     border-radius: 40px;
-    padding: 20px 50px 17px 50px;
+    padding: 1.75% 3% 1.75% 3%;
 
     margin: auto 0 50px 0;
 }
@@ -492,6 +493,32 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* header */
+
+    /* main */
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main_left {
+        width: 100%;
+        height: 800px;
+        display: flex;
+    }
+
+    .main_right {
+        width: 100%;
+        height: 100%;
+    }
+
+    .main_right img {
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%;
+        height: 100%;
+    }
+
     /* project_request */
     .project_request {
         flex-direction: column;
