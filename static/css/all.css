@@ -68,7 +68,7 @@ nav {
 .nav_buttons{
     margin-top: 10px;
     max-width: 470px;
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
 }
@@ -79,7 +79,7 @@ nav {
 
 @media (min-width: 769px) {
     .nav_button{
-        font-size: clamp(20px, 3vw, 30px);
+        font-size: clamp(18px, 3vw, 22px);
     }
 }
 
@@ -87,7 +87,7 @@ nav {
     font-family: 'TTCommons-Bold';
     color: #EAE4D6;
     border: 3px solid #EAE4D6;
-    font-size: clamp(20px, 4vw, 40px);
+    font-size: clamp(18px, 4vw, 23px);
     border-radius: 40px;
     padding: 1.75% 3% 1.75% 3%;
     margin: auto 0 50px 0;
@@ -511,7 +511,7 @@ footer {
     }
 
     .nav_button{
-        font-size: clamp(15px, 3vw, 20px);
+        font-size: clamp(17px, 3vw, 20px);
     }
 
     .header_make_order_button {
@@ -544,6 +544,7 @@ footer {
     .main_left {
         width: 100%;
         height: 800px;
+        margin-top: 0;
         /* display: flex; */
     }
 
@@ -568,6 +569,7 @@ footer {
         height: auto;
         flex-flow: row wrap;
         gap: 10px;
+        padding: 30px 30px;
     }
 
     .project_request > * {
@@ -576,6 +578,9 @@ footer {
 
     .border_text_text {
         width: 100%;
+        background-color: #1F201F;
+        border: none;
+        padding: 0%;
     }
 
     .submit_form {
@@ -597,7 +602,7 @@ footer {
         text-align: center;
     }
 
-    .contact_form button, div {
+    .submit_form div {
         margin-top: 10px;
     }
 
@@ -641,11 +646,13 @@ footer {
         flex: 1 40%;
         width: 100%;
         height: 100px;
+        align-items: start;
+        padding-left: 20px;
     }
 
     .footer_link_button{
-        width: 82%;
-        padding-left: 18%;
+        /* width: 82%;
+        padding-left: 18%; */
     }
 
     .footer_info{
@@ -662,10 +669,12 @@ footer {
         padding-top: 2%;
     }
     .footer_follow {
-        width: 32.5%;
-        padding-left: 7.5%;
+        width: 40%;
+        margin: 0;
+        padding-left: 20px;
     }
     .footer_social_buttons{
         width: 60%;
+        margin: 0;
     }
 }
