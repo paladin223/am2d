@@ -29,3 +29,22 @@ async def read_root(request: Request):
             "right_images": right_images
         },
     )
+
+
+@app.get("/prices", response_class=JSONResponse)
+async def prices(request: Request):
+    left_images = [
+        "/static/img/section2_left.jpg",
+        "/static/img/bordo80/footer_left.jpg"
+    ]
+    right_images = [
+        "/static/img/section2_right.jpg",
+        "/static/img/bordo80/footer_middle.jpg",
+    ]
+    return templates.TemplateResponse(
+        "prices.html",
+        {
+            "request": request,
+            "title": "am2d",
+        },
+    )
