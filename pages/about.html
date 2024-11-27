@@ -5,14 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
   <meta name="description" content="Краткое описание страницы">
-  <link rel="stylesheet" href="../static/css/all.css">
   <link rel="stylesheet" href="../static/css/about.css">
+  <link rel="stylesheet" href="../static/css/all.css">
 </head>
 <body class="dark_body">
   <header class="about_header">
-    <div class="grain"></div>
-    {% include 'nav_white.html' %}
+    {% include 'nav_black.html' %}
   </header>
+  <main>
+    <div class="about_main_left">
+      <div>
+        <div class="about_name"><b>AM2D</b>ESIGN</div>
+        <p>НЕМНОГО ИНФОРМАЦИИ О НАС</p>
+      </div>
+      <div class="about_left_buttons">
+        <div class="about_projects">Наши проекты</div>
+        <div class="order_project">Заказать проект</div>
+      </div>
+    </div>
+    <div class="about_main_right">
+      <div class="big_text">Дизайн, который говорит о Вас – у нас</div>
+      <div class="small_text">
+        Всё начинается с пространства. Мы верим, что интерьер — это не просто стены и мебель, а сильный инструмент, который помогает бизнесу раскрыться и заявить о себе. Наш подход прост: сложные задачи решаем легко и понятно, предлагая оригинальные решения, которые помогают вам не только привлечь внимание, но и увеличить прибыль.
+        Каждый проект — это уникальная возможность создать пространство, в котором ваши клиенты будут чувствовать себя комфортно, а сотрудники — работать с максимальной эффективностью.
+        <br><br>
+        Мы проектируем и реализуем коммерческие объекты быстро, учитывая все нюансы, чтобы бизнес мог расти без лишних задержек.
+        <br><br>
+        Ваш успех начинается с правильного пространства, и мы здесь, чтобы помочь вам его создать</div>
+    </div>
+  </main>
   <div class="project_request">{% include 'project_request.html' %}</div>
   <footer>{% include 'footer.html' %}</footer>
 </body>
