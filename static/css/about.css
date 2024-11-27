@@ -1,0 +1,28 @@
+.about_header {
+    height: 100vh;
+}
+
+.about_header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30%; /* Высота градиента 30% */
+    background: linear-gradient(to bottom, rgba(234, 228, 214, 0.7), rgba(234, 228, 214, 0) 100%);
+}
+
+.grain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: rgba(234, 228, 214, 0.5);
+    opacity: 0.2; /* Уровень прозрачности для зернистости */
+    pointer-events: none; /* Чтобы не мешать взаимодействию с другими элементами */
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 20%, transparent 20%),
+                      radial-gradient(circle, rgba(255, 255, 255, 0.1) 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%; /* Размер зерен */
+    background-position: 0 0, 50% 50%; /* Позиция зерен */
+}

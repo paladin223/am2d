@@ -33,16 +33,19 @@ async def read_root(request: Request):
 
 @app.get("/prices", response_class=JSONResponse)
 async def prices(request: Request):
-    left_images = [
-        "/static/img/section2_left.jpg",
-        "/static/img/bordo80/footer_left.jpg"
-    ]
-    right_images = [
-        "/static/img/section2_right.jpg",
-        "/static/img/bordo80/footer_middle.jpg",
-    ]
     return templates.TemplateResponse(
         "prices.html",
+        {
+            "request": request,
+            "title": "am2d",
+        },
+    )
+
+
+@app.get("/about", response_class=JSONResponse)
+async def prices(request: Request):
+    return templates.TemplateResponse(
+        "about.html",
         {
             "request": request,
             "title": "am2d",

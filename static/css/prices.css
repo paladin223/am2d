@@ -20,7 +20,8 @@
     flex: 1 30%;
     display: flex;
     flex-direction: column;
-    height: 300px;
+    min-height: 300px;
+    height: auto;
     justify-content: space-between;
     padding-left: 30px;
     border-left: solid 2px #EAE4D6;
@@ -40,11 +41,11 @@
 }
 
 .desighn_project_text div {
-    font-size: 32px;
+    font-size: clamp(20px, 3vw, 32px);
 }
 
 .desighn_project_text p {
-    font-size: 22px;
+    font-size: clamp(16px, 3vw, 22px);
 }
 
 .main_inline {
@@ -54,20 +55,21 @@
 }
 
 .text {
-    font-size: 18px;
-    border-bottom: none;
+    font-size: 16px;
+    /* width: 200px; */
 }
 
-/* .fake {
-    width: 100%;
+.fake {
+    flex-grow: 1;
+    margin: 0 0 0 5px;
     border-bottom: solid 2px #EAE4D6;
-} */
+}
 
 .btn {
     background-color: #EAE4D6;
     color: #1F201F;
     max-width: 90px;
-    width: 30%;
+    width: 150px;
     padding: 10px 0;
     padding-bottom: 8px !important;
     display: flex;
@@ -84,17 +86,18 @@
     color: #F56645;
     border-left: solid 2px #F56645;
     padding-left: 30px;
-    height: 300px;
+    min-height: 300px;
+    height: auto;
     margin-top: 50px;
 }
 
 .author_project div {
-    font-size: 32px;
+    font-size: clamp(20px, 3vw, 32px);
     width: 80%;
 }
 
 .author_project p {
-    font-size: 20px;
+    font-size: clamp(16px, 3vw, 22px);
     width: 80%;
     margin-bottom: 20px;
 }
@@ -112,18 +115,20 @@
 }
 
 .full_project {
+    flex: 1 40%;
     color: #999EBE;
     border-left: solid 2px #999EBE;
     padding-left: 30px;
-    height: 300px;
+    min-height: 300px;
+    height: auto;
     margin-top: 50px;
 }
 
 .full_project div {
-    font-size: 32px;
+    font-size: clamp(20px, 3vw, 30px);
 }
 .full_project p {
-    font-size: 20px;
+    font-size: clamp(16px, 3vw, 20px);
     margin-bottom: 20px;
 }
 
@@ -146,7 +151,8 @@
     margin-bottom: 50px;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    min-height: 60px;
+    height: auto;
     border-left: solid 2px #999EBE;
     padding-left: 10px;
 }
@@ -210,4 +216,61 @@ button {
     background-color: #EAE4D6 !important;
     color: #1F201F !important;
     border: solid 1px #1F201F !important;
+}
+
+@media (max-width: 1300px) {
+    .desighn_project {
+        flex: 1 100%;
+        width: 100%;
+        border-left: none;
+        min-height: auto !important;
+        padding-left: 0;
+        padding-bottom: 10px;
+    }
+    .desighn_project_text {
+        width: 100%;
+    }
+    .desighn_project_prices {
+        width: 100%;
+    }
+    .author_project {
+        flex: 1 100%;
+        width: 100%;
+        border-left: none;
+        border-top: solid 2px #F56645;
+        min-height: auto !important;
+        padding-left: 0;
+        padding-top: 50px;
+    }
+    .author_project > * {
+        width: 100% !important;
+    }
+    .author_project_btn{
+        width: 200px !important;
+    }
+    .full_project {
+        flex: 1 100%;
+        width: 100%;
+        border-left: none;
+        min-height: auto !important;
+        padding-left: 0;
+        padding-top: 50px;
+        border-top: solid 2px #999EBE;
+    }
+    .main_footer{
+        padding-left: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+        border-left: none;
+        padding-left: 0;
+        padding-top: 50px;
+        border-top: solid 2px #999EBE;
+    }
+}
+
+@media (max-width: 768px) {
+    .border_text_text {
+        border: none;
+    }
 }
