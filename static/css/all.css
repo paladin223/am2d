@@ -346,7 +346,7 @@ section {
 
 .border_text_text {
     background-color: #000000;
-    padding: 5%;
+    padding: 10%;
     width: 85%;
     border: 2px solid #EAE4D6;
     border-radius: 15px 15px 15px 15px;
@@ -388,11 +388,17 @@ section {
 }
 
 .contact_form input, textarea {
-    height: 15%;
+    height: 12%;
     width: 50%;
+    font-family: TTCommons;
+    font-size: 14px;
     border-radius: 20px 20px 0 20px;
     background-color: #EAE4D6;
     text-align: center;
+}
+
+.contact_form input::placeholder {
+    color: #1f1f1f;
 }
 
 .contact_form .contact_form_text{
@@ -412,10 +418,10 @@ section {
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%); 
-    color: #aaa; 
     pointer-events: none; 
-    transition: 0.2s; 
-    font-size: 14px; 
+    transition: 0.2s;
+    font-size: 14px;
+    color: #1f1f1f;
 }
 
 .contact_form div {

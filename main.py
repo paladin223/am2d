@@ -51,3 +51,14 @@ async def prices(request: Request):
             "title": "am2d",
         },
     )
+
+
+@app.get("/contacts", response_class=JSONResponse)
+async def prices(request: Request):
+    return templates.TemplateResponse(
+        "contacts.html",
+        {
+            "request": request,
+            "title": "am2d",
+        },
+    )
