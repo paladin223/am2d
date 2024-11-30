@@ -1,6 +1,6 @@
 main {
     background-color: #EAE4D6 !important;
-    height: 300px !important;
+    height: 600px !important;
     display: flex;
     flex-flow: row wrap;
     align-content: flex-start
@@ -24,7 +24,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    height: 240px;
+    height: 540px;
 }
 .email {
     margin-top: 20px;
@@ -44,29 +44,61 @@ main {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    height: 240px;
+    height: 540px;
     border-left: #1F201F 2px solid;
 }
 
-.email {
+.phone {
     margin-top: 20px;
 }
 
-.email div:first-child { 
+.phone div:first-child { 
     font-size: 25px;
 }
 
-.email div:last-child { 
-    font-size: 18px;
+.phone div:last-child { 
+    font-size: 16px;
+}
+
+.contact_form {
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    width: 80% !important;
+    gap: 20px;
+    margin-left: 20px;
+}
+
+.contact_form button {
+    align-self: flex-end;
+    width: 25%;
+    height: 40px;
+    margin-left: 25%;
+    background-color: #1F201F;
+    border: 2px solid #EAE4D6;
+    color: #EAE4D6;
+    border-radius: 20px;
 }
 
 .contacts_right .contact_form input {
     border: #1F201F 2px solid;
 }
 
+
+.contact_form_name {
+    width: 100% !important;
+}
+
+.contact_form_email {
+    width: 100% !important;
+}
+
+.contact_form_tel {
+    width: 100% !important;
+}
+
 .contacts_right .contact_form .contact_form_text{
     height: 23%;
-    width: 50%;
+    width: 100% !important;
     padding: 1% 1%;
     border-radius: 0 20px 20px 20px;
     display: flex;
@@ -76,3 +108,11 @@ main {
     overflow: auto;
     border: #1F201F 2px solid;
 }
+
+.contact_form div {
+    width: 100% !important;
+}
+
+ .soglasie152 {
+    color: #1F201F !important;
+ }

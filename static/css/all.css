@@ -415,9 +415,6 @@ section {
 
 .placeholder {
     position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
     pointer-events: none; 
     transition: 0.2s;
     font-size: 14px;
@@ -444,7 +441,6 @@ section {
     border: 2px solid #EAE4D6;
     color: #EAE4D6;
     border-radius: 20px;
-
 }
 
 /* footer */
