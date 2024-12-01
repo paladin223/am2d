@@ -174,8 +174,8 @@
 
 .main_footer_call {
     font-family: TTCommons-Bold;
-    font-size: 30px;
-    padding: 13px 40px 8px 40px;
+    font-size: 20px;
+    padding: 16px 40px 11px 40px;
     border-radius: 30px;
     border: solid 2px #EAE4D6;
     display: flex;
@@ -195,17 +195,22 @@
     border: #1F201F 2px solid;
 }
 
-.contact_form_name {
+.contact_form input {
     background-color: #1F201F !important;
     color: #EAE4D6;
 }
-.contact_form_email {
+
+.contact_form textarea {
     background-color: #1F201F !important;
     color: #EAE4D6;
 }
-.contact_form_text {
-    background-color: #1F201F !important;
-    color: #EAE4D6;
+
+.contact_form input::placeholder {
+    color: #888888;;
+}
+
+.placeholder {
+    color: #888888;;
 }
 
 .soglasie152 {

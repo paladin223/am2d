@@ -14,32 +14,6 @@ updateBackgroundPosition();
 // Обновляем позицию фона при изменении размера окна
 window.addEventListener('resize', updateBackgroundPosition);
 
-const textarea = document.getElementsByClassName('contact_form_text')[0];
-const placeholder = document.getElementsByClassName('placeholder')[0];
-
-// Функция для обновления видимости плейсхолдера
-function updatePlaceholder() {
-    if (textarea.value === '') {
-        placeholder.style.display = 'block';
-    } else {
-        placeholder.style.display = 'none';
-    }
-}
-
-// Скрываем плейсхолдер при фокусировке
-textarea.addEventListener('focus', () => {
-    placeholder.style.display = 'none';
-});
-
-// Проверяем текст при потере фокуса
-textarea.addEventListener('blur', updatePlaceholder);
-
-// Проверяем текст при вводе
-textarea.addEventListener('input', updatePlaceholder);
-
-// Инициализация видимости плейсхолдера
-updatePlaceholder();
-
 let currentIndex = 0;
 let timer; // Переменная для хранения идентификатора таймера
 const leftSection = document.querySelector('.section_left');

@@ -416,7 +416,6 @@ section {
 .placeholder {
     position: absolute;
     pointer-events: none; 
-    transition: 0.2s;
     font-size: 14px;
     color: #1f1f1f;
 }

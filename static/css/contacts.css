@@ -1,9 +1,10 @@
 main {
     background-color: #EAE4D6 !important;
     height: 600px !important;
+    width: 100%;
     display: flex;
-    flex-flow: row wrap;
-    align-content: flex-start
+    flex-flow: row wrap !important;
+    align-content: flex-start;
 }
 
 .contacts_name {
@@ -60,15 +61,18 @@ main {
     font-size: 16px;
 }
 
-.contact_form {
+.contacts_form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start !important;
     align-items: flex-start !important;
     width: 80% !important;
-    gap: 20px;
+    gap: 10px;
     margin-left: 20px;
 }
 
-.contact_form button {
+.contacts_form button {
     align-self: flex-end;
     width: 25%;
     height: 40px;
@@ -79,25 +83,33 @@ main {
     border-radius: 20px;
 }
 
-.contacts_right .contact_form input {
+.contacts_form input {
+    height: 60px;
     border: #1F201F 2px solid;
+    font-family: TTCommons;
+    font-size: 14px;
+    border-radius: 20px 20px 0 20px;
+    background-color: #EAE4D6;
+    text-align: center;
+}
+.contacts_form input::placeholder {
+    color: #2f2f2f;
 }
 
-
-.contact_form_name {
+.contacts_form_name {
     width: 100% !important;
 }
 
-.contact_form_email {
+.contacts_form_email {
     width: 100% !important;
 }
 
-.contact_form_tel {
+.contacts_form_tel {
     width: 100% !important;
 }
 
-.contacts_right .contact_form .contact_form_text{
-    height: 23%;
+.contacts_form_text{
+    height: 140px;
     width: 100% !important;
     padding: 1% 1%;
     border-radius: 0 20px 20px 20px;
@@ -109,10 +121,46 @@ main {
     border: #1F201F 2px solid;
 }
 
-.contact_form div {
+.placeholder {
+    position: absolute;
+    pointer-events: none; 
+    color: #2f2f2f;
+}
+
+.contacts_form div {
     width: 100% !important;
 }
 
- .soglasie152 {
+.soglasie152 {
     color: #1F201F !important;
- }
+}
+
+@media (max-width: 768px) {
+    main {
+        height: auto !important;
+        padding: 0 50px;
+    }
+    .contacts_left {
+        flex: 1 100%;
+        width: 100%;
+        height: auto !important;
+        padding: 0;
+    }
+    
+    .contacts_right {
+        flex: 1 100%;
+        width: 100%;
+        height: auto !important;
+        border: none;
+        padding: 0;
+    }
+    .contacts_form {
+        margin: 0;
+        width: 100% !important;
+        padding: 30px 0;
+    }
+
+    .contacts_name {
+        padding: 0;
+    }
+}
