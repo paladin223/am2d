@@ -163,23 +163,27 @@
 }
 
 .main_footer_price {
-    font-size: 30px;
-    padding: 12px 10px 8px 10px;
+    font-size: 25px;
+    width: 250px;
     border-radius: 30px;
     background-color: #999EBE;
     color: #1F201F;
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 25px 0 21px 0;
 }
 
 .main_footer_call {
     font-family: TTCommons-Bold;
     font-size: 20px;
-    padding: 16px 40px 11px 40px;
+    width: 250px;
     border-radius: 30px;
     border: solid 2px #EAE4D6;
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 25px 0 21px 0;
 }
 
 
@@ -221,6 +225,10 @@ button {
     background-color: #EAE4D6 !important;
     color: #1F201F !important;
     border: solid 1px #1F201F !important;
+}
+
+.author_project_btn {
+    font-size: 25px !important;
 }
 
 @media (max-width: 1300px) {

@@ -43,7 +43,7 @@ async def prices(request: Request):
 
 
 @app.get("/about", response_class=JSONResponse)
-async def prices(request: Request):
+async def about(request: Request):
     return templates.TemplateResponse(
         "about.html",
         {
@@ -54,7 +54,7 @@ async def prices(request: Request):
 
 
 @app.get("/contacts", response_class=JSONResponse)
-async def prices(request: Request):
+async def contacts(request: Request):
     return templates.TemplateResponse(
         "contacts.html",
         {

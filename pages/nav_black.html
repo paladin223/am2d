@@ -1,11 +1,13 @@
 <nav>
   <div class="header_logo black_nav">
-    <img src="../static/img/logo_dark.png">
+    <a href="{{ url_for('read_root') }}">
+      <img src="../static/img/logo_dark.png">
+    </a>
   </div>
   <div class="nav_buttons white_nav">
-    <div class="nav_button black_nav">О нас</div>
-    <div class="nav_button black_nav">Услуги</div>
-    <div class="nav_button black_nav">Контакты</div>
+    <div class="nav_button black_nav"><a href="{{ url_for('about') }}">О нас</a></div>
+    <div class="nav_button black_nav"><a href="{{ url_for('prices') }}">Услуги</a></div>
+    <div class="nav_button black_nav"><a href="{{ url_for('contacts') }}">Контакты</a></div>
     <div class="nav_button black_nav">Проекты</div>
   </div>
 </nav>

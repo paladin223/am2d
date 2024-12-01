@@ -1,3 +1,7 @@
+body {
+    transition: opacity 1s ease;
+}
+
 main {
     background-color: #EAE4D6 !important;
     height: 600px !important;
@@ -133,6 +137,14 @@ main {
 
 .soglasie152 {
     color: #1F201F !important;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px !important;
+    padding: 25px 0;
 }
 
 @media (max-width: 768px) {
