@@ -60,3 +60,41 @@ textarea.addEventListener('input', updatePlaceholder);
 
 // Инициализация видимости плейсхолдера
 updatePlaceholder();
+
+
+document.getElementById('contactForm').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Предотвращаем стандартное поведение формы
+
+    // Собираем данные из формы
+    const name = document.querySelector('.contact_form_name').value;
+    const email = document.querySelector('.contact_form_email').value;
+    const phone = document.querySelector('.contact_form_tel').value;
+    const text = document.querySelector('.contact_form_text').value;
+
+    // Создаем объект с данными
+    const data = {
+        name: name,
+        email: email,
+        phone: phone,
+        text: text,
+    };
+
+    try {
+        const response = await fetch('/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json' // Указываем, что отправляем JSON
+            },
+            body: JSON.stringify(data) // Преобразуем объект в строку JSON
+        });
+
+        if (!response.ok) {
+            throw new Error('Сетевая ошибка');
+        }
+
+        const result = await response.json();
+        console.log(result)
+    } catch (error) {
+        console.log(error)
+    }
+});

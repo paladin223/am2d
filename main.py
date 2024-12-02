@@ -5,17 +5,12 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 import crud
+import schemas
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="pages")
-
-
-@app.get("/start/")
-def refresh_db():
-    crud.drop_tables()
-    crud.create_tables()
 
 
 @app.get("/", response_class=JSONResponse)
@@ -70,3 +65,8 @@ async def contacts(request: Request):
             "title": "am2d",
         },
     )
+
+
+@app.post("/submit", response_model=schemas.Order)
+async def submit(order: schemas.Order):
+    return crud.add_order(order)
