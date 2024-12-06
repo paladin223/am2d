@@ -20,11 +20,13 @@ session_factory = sessionmaker(sync_engine)
 
 
 str512 = Annotated[str, 512]
-str32 = Annotated[str, 32]
-str16 = Annotated[str, 16]
+# str32 = Annotated[str, 32]
+# str16 = Annotated[str, 16]
 intpk = Annotated[int, mapped_column(primary_key=True)]
 
 
 class Base(DeclarativeBase):
-    type_annotation_map = {str512: String(512), str32: String(32),
-                           str16: String(16), intpk: Integer}
+    type_annotation_map = {
+        str512: String(512),
+        intpk: Integer,
+    }

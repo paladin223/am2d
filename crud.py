@@ -1,9 +1,8 @@
-# from sqlalchemy import select
+from sqlalchemy import select
 
 from database import Base
-from database import sync_engine
 from database import session_factory
-
+from database import sync_engine
 import models
 import schemas
 
@@ -23,3 +22,14 @@ def add_order(order: schemas.Order):
         session.commit()
         session.refresh(new_order)
     return new_order
+
+
+def get_orders():
+    with session_factory() as session:
+        query = select(
+            models.Order,
+        )
+        orders = session.execute(query)
+        returned_orders = orders.scalars().all()
+        # print(list(returned_orders))
+    return returned_orders

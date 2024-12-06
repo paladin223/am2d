@@ -33,6 +33,14 @@
     font-weight: normal;
     font-style: normal;
 }
+body {
+    opacity: 0; /* Начальная непрозрачность */
+    transition: opacity 2s ease;
+}
+
+button {
+    cursor: pointer;
+}
 
 div {
     font-family: 'TTCommons';
@@ -83,6 +91,7 @@ nav {
 .header_logo img {
     display: block;
     width: 100%;
+    cursor: pointer
 }
 
 .nav_buttons{
@@ -96,6 +105,7 @@ nav {
     max-width: 116px;
     width: 100%;
     text-align: center;
+    cursor: pointer
 }
 
 .white_nav{
@@ -120,6 +130,13 @@ nav {
     border-radius: 40px;
     padding: 1.75% 3% 1.75% 3%;
     margin: auto 0 50px 0;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.header_make_order_button:hover {
+    background-color: #EAE4D6;
+    color: #333;
 }
 
 .header_make_order_button span {
@@ -269,20 +286,19 @@ section {
 }
 
 .text_descripton {
-    height: 450px;
+    padding: 30px;
+    height: auto;
     width: 100%;
     background-color: #EAE4D6;
-    font-size: 60px;
+    font-size: 50px;
     font-family: 'TTCommons-Thin';
-    text-align: left;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-flow: row wrap;
+    gap: 10px;
 }
 
-.text_descripton b {
-    font-family: 'TTCommons';
-    font-weight: normal;
+.bold-text {
+    font-family: TTCommons;
 }
 
 /* contact_form */
@@ -440,6 +456,7 @@ section {
     border: 2px solid #EAE4D6;
     color: #EAE4D6;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 /* footer */
@@ -462,6 +479,7 @@ footer {
 
 .footer_logo_img{
     width: 60%;
+    cursor: pointer;
 }
 
 .footer_logo div {
@@ -481,6 +499,7 @@ footer {
 }
 
 .footer_link_button{
+    cursor: pointer;
     width: 33%;
     height: 40%;
     display: flex;
@@ -588,7 +607,7 @@ footer {
     }
 
     .text_descripton {
-        display: none;
+        font-size: 30px;
     }
 
     .project_slider_left {
@@ -690,7 +709,7 @@ footer {
         padding-left: 20px;
     }
 
-    .footer_link_button{
+    .footer_link_button a{
         /* width: 82%;
         padding-left: 18%; */
     }

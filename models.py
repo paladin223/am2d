@@ -7,7 +7,7 @@ class Order(database.Base):
     __tablename__ = "orders"
 
     id: Mapped[database.intpk]
-    name: Mapped[database.str16]
-    email: Mapped[database.str32]
-    phone: Mapped[database.str32]
+    name: Mapped[database.str512]
+    email: Mapped[database.str512]
+    phone: Mapped[database.str512]
     text: Mapped[database.str512]

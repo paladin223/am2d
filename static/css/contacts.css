@@ -1,7 +1,3 @@
-body {
-    transition: opacity 1s ease;
-}
-
 main {
     background-color: #EAE4D6 !important;
     height: 600px !important;

@@ -1,3 +1,7 @@
+window.addEventListener("load", function() {
+    document.body.style.opacity = 1; 
+});
+
 function centerElement() {
     let contactForm = document.getElementsByClassName('contact_form')[0];
     if (!contactForm) {
@@ -66,10 +70,10 @@ document.getElementById('contactForm').addEventListener('submit', async function
     event.preventDefault(); // Предотвращаем стандартное поведение формы
 
     // Собираем данные из формы
-    const name = document.querySelector('.contact_form_name').value;
-    const email = document.querySelector('.contact_form_email').value;
-    const phone = document.querySelector('.contact_form_tel').value;
-    const text = document.querySelector('.contact_form_text').value;
+    const name = document.querySelector('#contact_form_name').value;
+    const email = document.querySelector('#contact_form_email').value;
+    const phone = document.querySelector('#contact_form_tel').value;
+    const text = document.querySelector('#contact_form_text').value;
 
     // Создаем объект с данными
     const data = {
@@ -98,3 +102,41 @@ document.getElementById('contactForm').addEventListener('submit', async function
         console.log(error)
     }
 });
+
+if (document.getElementsByClassName('header_make_order_button').length > 0) {
+    document.getElementsByClassName('header_make_order_button')[0].addEventListener('click', function() {
+        const section = document.getElementsByClassName('project_request')[0];
+        smoothScrollTo(section.offsetTop, 1000); // Прокрутка к секции за 1000 мс
+    });
+}
+
+if (document.getElementsByClassName('main_footer_call').length > 0) {
+    document.getElementsByClassName('main_footer_call')[0].addEventListener('click', function() {
+        const section = document.getElementsByClassName('project_request')[0];
+        smoothScrollTo(section.offsetTop, 1000); // Прокрутка к секции за 1000 мс
+    });
+}
+
+function smoothScrollTo(target, duration) {
+    const start = window.scrollY; // Текущая позиция прокрутки
+    const distance = target - start; // Расстояние до цели
+    let startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1); // Нормализуем прогресс
+
+        // Используем функцию easing для более плавного эффекта
+        const ease = easeInOutQuad(progress);
+
+        window.scrollTo(0, start + (distance * ease)); // Прокручиваем
+        if (timeElapsed < duration) requestAnimationFrame(animation); // Продолжаем анимацию
+    }
+
+    requestAnimationFrame(animation);
+}
+
+function easeInOutQuad(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; // Функция easing
+}

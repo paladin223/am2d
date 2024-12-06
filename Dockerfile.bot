@@ -1,0 +1,19 @@
+# Dockerfile.bot
+FROM python:3.11.6-alpine3.18
+
+WORKDIR /app
+
+COPY requirements/ /app/requirements
+
+RUN python -m venv /opt/venv
+
+ENV PATH="/opt/venv/bin:$PATH"
+
+RUN python -m pip install --upgrade pip
+
+# Установите зависимости для бота
+RUN pip install -r /app/requirements/bot.txt
+
+COPY . .
+
+CMD ["python", "bot.py"]

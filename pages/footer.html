@@ -1,11 +1,11 @@
 <div class="footer_logo">
-  <img src="../static/img/light_logo.png" class="footer_logo_img">
-  <div>AM2DESIGN STUDIO</div>
+  <img src="../static/img/light_logo.png" class="footer_logo_img" onclick="window.location.href='{{ url_for('read_root') }}'">
+  <div>AM2DESIGN STUDIO</div></a>
 </div>
 <div class="footer_links">
-  <div class="footer_link_button">О нас</div>
-  <div class="footer_link_button">Услуги</div>
-  <div class="footer_link_button">Контакты</div>
+  <div class="footer_link_button"><a href="{{ url_for('about') }}">О нас</a></div>
+  <div class="footer_link_button"><a href="{{ url_for('prices') }}">Услуги</a></div>
+  <div class="footer_link_button"><a href="{{ url_for('contacts') }}">Контакты</a></div>
   <div class="footer_link_button">Проекты</div>
 </div>
 <div class="footer_info">
