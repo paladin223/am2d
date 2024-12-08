@@ -16,4 +16,4 @@ RUN pip install -r /app/requirements/bot.txt
 
 COPY . .
 
-CMD ["python", "bot.py"]
+CMD ["sh", "-c", "python bot.py & uvicorn bot:app2 --host 0.0.0.0 --port 8001 --reload"]

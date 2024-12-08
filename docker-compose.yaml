@@ -41,12 +41,16 @@ services:
       - ./certbot/www/:/var/www/certbot/:rw
       - ./certbot/conf/:/etc/letsencrypt/:rw
 
-  bot:
-    build:
-      context: .
-      dockerfile: Dockerfile.bot
-    environment:
-      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+  # bot:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.bot
+  #   ports:
+  #     - "8001:8001"
+  #   depends_on:
+  #     - db
+  #   environment:
+  #     TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
 
 volumes:
   certs:

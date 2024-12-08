@@ -10,51 +10,76 @@
   <script src="../static/js/scripts_all.js" defer></script>
 </head>
 <body class="dark_body">
-  <header class="white_header">
-    {% include 'nav_white.html' %}
-  </header>
-  <main class="prices_main">
-    <div class="services">УСЛУГИ</div>
-    <div class="desighn_project">
-      <div class="desighn_project_text">
-        <div>ДИЗАЙН-ПРОЕКТ</div>
-        <p>Подробный дизайн пространства, включая концепцию, планировку, визуализации, чертежи</p>
+  <div class="loadingOverlay">
+    <img src="../static/img/logo_dark.png">
+    Loading
+  </div>
+  <div class="contentData">
+    <header class="white_header">
+      {% include 'nav_white.html' %}
+    </header>
+    <main class="prices_main">
+      <div class="services">УСЛУГИ</div>
+      <div class="desighn_project">
+        <div class="desighn_project_text">
+          <div>ДИЗАЙН-ПРОЕКТ</div>
+          <p>Подробный дизайн пространства, включая концепцию, планировку, визуализации, чертежи</p>
+        </div>
+        <div class="desighn_project_prices">
+          <div class="main_inline">
+            <div class="text">ДО 100 М²</div>
+            <div class="fake"></div>
+            <div class="btn">4500 Р/М²</div>
+          </div>
+          <div class="main_inline">
+            <div class="text">ОТ 100 М² ДО 350 М²</div>
+            <div class="fake"></div>
+            <div class="btn">3500 Р/М²</div>
+          </div>
+          <div class="main_inline">
+            <div class="text">ОТ 350 М²</div>
+            <div class="fake"></div>
+            <div class="btn">3000 Р/М²</div>
+          </div>
+        </div>
       </div>
-      <div class="desighn_project_prices">
-        <div class="main_inline">
-          <div class="text">ДО 100 М²</div>
-          <div class="fake"></div>
-          <div class="btn">4500 Р/М²</div>
-        </div>
-        <div class="main_inline">
-          <div class="text">ОТ 100 М² ДО 350 М²</div>
-          <div class="fake"></div>
-          <div class="btn">3500 Р/М²</div>
-        </div>
-        <div class="main_inline">
-          <div class="text">ОТ 350 М²</div>
-          <div class="fake"></div>
-          <div class="btn">3000 Р/М²</div>
-        </div>
+      <div class="author_project">
+        <div>АВТОРСКИЙ НАДЗОР</div>
+        <p>Контроль за реализацией проекта, координация подрядчиков и решение возникающих вопросов</p>
+        <div class="author_project_btn">от 40 000 Р</div>
       </div>
-    </div>
-    <div class="author_project">
-      <div>АВТОРСКИЙ НАДЗОР</div>
-      <p>Контроль за реализацией проекта, координация подрядчиков и решение возникающих вопросов</p>
-      <div class="author_project_btn">от 40 000 Р</div>
-    </div>
-    <div class="full_project">
-      <div>КОМЛЕКТАЦИЯ ПРОЕКТА</div>
-      <p>Подбор и закупка материалов, мебели и оборудования</p>
-      <div class="full_project_btn">10% от итоговой суммы</div>
-    </div>
-    <div class="main_footer">
-      <div class="consult">КОНСУЛЬТАЦИЯ ДИЗАЙНЕРА</div>
-      <div class="main_footer_price">5000 Р за 2 часа</div>
-      <div class="main_footer_call">ОСТАВИТЬ ЗАЯВКУ</div>
-    </div>
-  </main>
-  <div class="project_request">{% include 'project_request.html' %}</div>
-  <footer>{% include 'footer.html' %}</footer>
+      <div class="full_project">
+        <div>КОМЛЕКТАЦИЯ ПРОЕКТА</div>
+        <p>Подбор и закупка материалов, мебели и оборудования</p>
+        <div class="full_project_btn">10% от итоговой суммы</div>
+      </div>
+      <div class="main_footer">
+        <div class="consult">КОНСУЛЬТАЦИЯ ДИЗАЙНЕРА</div>
+        <div class="main_footer_price">5000 Р за 2 часа</div>
+        <div class="main_footer_call">ОСТАВИТЬ ЗАЯВКУ</div>
+      </div>
+    </main>
+    <div class="project_request">{% include 'project_request.html' %}</div>
+    <footer>{% include 'footer.html' %}</footer>
+  </div>
+  <script>
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    async function init() {
+        try {
+            await sleep(1000);
+            // Скрыть затемнение и показать контент
+            document.getElementsByClassName('loadingOverlay')[0].style.display = 'none';
+            await sleep(1000);
+            document.getElementsByClassName('contentData')[0].style.opacity = 1;
+        } catch (error) {
+            console.error(error);
+            // Обработка ошибок, если изображения не загрузились
+            document.getElementsByClassName('loadingOverlay')[0].innerText = 'Технические работы';
+        }
+    }
+    init();
+  </script>
 </body>
 </html>

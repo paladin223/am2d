@@ -6,50 +6,58 @@
   <title>{{ title }}</title>
   <meta name="description" content="Краткое описание страницы">
   <link rel="stylesheet" href="../static/css/all.css">
-  <script src="../static/js/scripts_all.js" defer></script>
   <script>
     const leftImages = {{ left_images|tojson }};
     const rightImages = {{ right_images|tojson }};
+    const main_photo = "{{ main_photo }}";
+    const nav_photo = "{{ nav_photo }}";
   </script>
+  <script src="../static/js/scripts_all.js" defer></script>
   <script src="../static/js/script.js" defer></script>
 </head>
 <body class="dark_body">
-  <header>
-    {% include 'nav_white.html' %}
-    <div class="header_make_order_button">ЗАКАЗАТЬ ДИЗАЙН-ПРОЕКТ</div>
-  </header>
-  <main>
-    <div class="main_left">
-      <div class="main_left_project_name">НАЗВАНИЕ ПРОЕКТА</div>
-      <div class="main_left_project_description">краткая информация о проекте</div>
-    </div>
-    <div class="main_right">
-      <img src="../static/img/main_right.jpg">
-      <div class="main_right_button">ПЕРЕЙТИ К ПРОЕКТУ</div>
-    </div>
-  </main>
-  <section>
-    <div class="section_left">
-      <div class="section_left_project_name">Название проекта</div>
-      <div class="section_left_project_description">краткая информация о проекте</div>
-    </div>
-    <div class="section_right">
-      <div class="section_right_button">ПЕРЕЙТИ К ПРОЕКТУ</div>
-    </div>
-    <button class="prev" onclick="prevImage()">&#10094;</button>
-    <button class="next" onclick="nextImage()">&#10095;</button>
-  </section>
-  <div class="text_descripton">
-    <span class="bold-text">Наша главная задача </span> - помочь <span class="bold-text"> поднять прибыль вашего бизнеса, </span> благодаря грамотному дизайну интерьера
-    <br>
-    <span class="bold-text">С нами вы получите не только красивый дизайн, но и надежного партнера, который быстро и профессионально воплотит ваши идеи в реальность.</span>
+  <div class="loadingOverlay">
+    <img src="../static/img/logo_dark.png">
+    <div>Loading</div>
   </div>
-  <div class="project_slider">
-    <div class="project_slider_left"><img src="../static/img/bordo80/footer_left.jpg"></div>
-    <div class="project_slider_middle"><img src="../static/img/bordo80/footer_middle.jpg"></div>
-    <div class="project_slider_right"><img src="../static/img/bordo80/footer_right.jpg"></div>
+  <div class="contentData">
+    <header style="background-image: url('../static/img/{{ nav_photo }}/main.webp');">
+      {% include 'nav_white.html' %}
+      <div class="header_make_order_button">ЗАКАЗАТЬ ДИЗАЙН-ПРОЕКТ</div>
+    </header>
+    <main>
+      <div class="main_left" style="background-image: url('../static/img/{{ main_photo }}/main.webp');">
+        <div class="main_left_project_name">{{ main_project_name }}</div>
+        <div class="main_left_project_description">краткая информация о проекте</div>
+      </div>
+      <div class="main_right">
+        <img src="../static/img/{{ main_photo }}/1.webp">
+        <div class="main_right_button">ПЕРЕЙТИ К ПРОЕКТУ</div>
+      </div>
+    </main>
+    <section>
+      <div class="section_left">
+        <div class="section_left_project_name">Название проекта</div>
+        <div class="section_left_project_description">краткая информация о проекте</div>
+      </div>
+      <div class="section_right">
+        <div class="section_right_button">ПЕРЕЙТИ К ПРОЕКТУ</div>
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </section>
+    <div class="text_descripton">
+      <span class="bold-text">Наша главная задача - помочь поднять прибыль вашего бизнеса, </span> благодаря грамотному дизайну интерьера
+      <br>
+      <span class="bold-text">С нами вы получите не только красивый дизайн, но и надежного партнера, который быстро и профессионально воплотит ваши идеи в реальность.</span>
+    </div>
+    <div class="project_slider">
+      <div class="project_slider_left"><img src="../static/img/bordo80/footer_left.jpg"></div>
+      <div class="project_slider_middle"><img src="../static/img/bordo80/footer_middle.jpg"></div>
+      <div class="project_slider_right"><img src="../static/img/bordo80/footer_right.jpg"></div>
+    </div>
+    <div class="project_request">{% include 'project_request.html' %}</div>
+    <footer>{% include 'footer.html' %}</footer>
   </div>
-  <div class="project_request">{% include 'project_request.html' %}</div>
-  <footer>{% include 'footer.html' %}</footer>
 </body>
 </html>

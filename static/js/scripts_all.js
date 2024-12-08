@@ -1,7 +1,3 @@
-window.addEventListener("load", function() {
-    document.body.style.opacity = 1; 
-});
-
 function centerElement() {
     let contactForm = document.getElementsByClassName('contact_form')[0];
     if (!contactForm) {
