@@ -9,8 +9,8 @@
   <script>
     const leftImages = {{ left_images|tojson }};
     const rightImages = {{ right_images|tojson }};
+    const headerImages = {{ header_photo|tojson }};
     const main_photo = "{{ main_photo }}";
-    const nav_photo = "{{ nav_photo }}";
   </script>
   <script src="../static/js/scripts_all.js" defer></script>
   <script src="../static/js/script.js" defer></script>
@@ -21,17 +21,17 @@
     <div>Loading</div>
   </div>
   <div class="contentData">
-    <header style="background-image: url('../static/img/{{ nav_photo }}/main.webp');">
+    <header>
       {% include 'nav_white.html' %}
       <div class="header_make_order_button">ЗАКАЗАТЬ ДИЗАЙН-ПРОЕКТ</div>
     </header>
     <main>
-      <div class="main_left" style="background-image: url('../static/img/{{ main_photo }}/main.webp');">
-        <div class="main_left_project_name">{{ main_project_name }}</div>
+      <div class="main_left">
+        <div class="main_left_project_name">Кофейня "Skuratov"</div>
         <div class="main_left_project_description">краткая информация о проекте</div>
       </div>
       <div class="main_right">
-        <img src="../static/img/{{ main_photo }}/1.webp">
+        <img src="../static/img/main/2.webp">
         <div class="main_right_button">ПЕРЕЙТИ К ПРОЕКТУ</div>
       </div>
     </main>

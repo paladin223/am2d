@@ -47,6 +47,8 @@ main {
     padding: 10px 20px;
     border: solid 2px #1F201F;
     border-radius: 15px;
+    background-color: #1F201F;
+    color: #EAE4D6;
 }
 
 .about_main_right {

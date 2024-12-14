@@ -89,7 +89,7 @@ main {
     font-family: TTCommons;
     font-size: 14px;
     border-radius: 20px 20px 0 20px;
-    background-color: #EAE4D6;
+    background-color: #ffffff;
     text-align: center;
 }
 .contacts_form input::placeholder {

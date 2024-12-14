@@ -1,4 +1,5 @@
-let imagesToPreload = [...leftImages, ...rightImages, main_photo, nav_photo];
+let imagesToPreload = [...leftImages, ...rightImages, ...headerImages];
+console.log(imagesToPreload)
 let preloadedImages = [];
 
 function sleep(ms) {
@@ -14,7 +15,7 @@ function preloadImages() {
                 img.src = src[0];
             }
             else{
-                img.src = "../static/img/" + src + "/main.webp";
+                img.src = src;
             }
             console.log(img.src)
             img.onload = () => {
@@ -43,11 +44,15 @@ async function init() {
 init();
 
 let currentIndex = 0;
+let currentIndexHeader = 0;
 let timer;
 const leftSection = document.getElementsByClassName("section_left")[0];
 const rightSection = document.getElementsByClassName("section_right")[0];
+const header = document.getElementsByTagName("header")[0];
 const prevButton = document.querySelector('.prev');
 const nextButton = document.querySelector('.next');
+leftSection.classList.add('fade');
+rightSection.classList.add('fade');
 
 function updateBackgroundPosition() {
     const imageBlock = document.querySelector('header');
@@ -62,27 +67,47 @@ function updateBackgroundPosition() {
 updateBackgroundPosition();
 window.addEventListener('resize', updateBackgroundPosition);
 
+function changeHeader() {
+    currentIndexHeader = (currentIndexHeader + 1) % headerImages.length;
+    header.style.backgroundImage = `url(${headerImages[currentIndexHeader]})`;
+}
+
 function changeBackground() {
-    leftSection.style.backgroundImage = `url(${leftImages[currentIndex][0]})`;
-    leftSection.getElementsByClassName("section_left_project_name")[0].innerHTML = leftImages[currentIndex][1];
-    rightSection.style.backgroundImage = `url(${rightImages[currentIndex][0]})`;
+    leftSection.style.opacity = 0
+    rightSection.style.opacity = 0
+
+    setTimeout(() => {
+        leftSection.style.backgroundImage = `url(${leftImages[currentIndex][0]})`;
+        leftSection.getElementsByClassName("section_left_project_name")[0].innerHTML = leftImages[currentIndex][1];
+        rightSection.style.backgroundImage = `url(${rightImages[currentIndex][0]})`;
+    }, 1000);
+
+    setTimeout(() => {
+        leftSection.style.opacity = 1
+        rightSection.style.opacity = 1
+    }, 1000);
 }
 
 function nextImage() {
     disableButtons();
+
     currentIndex = (currentIndex + 1) % leftImages.length;
     changeBackground();
     resetTimer();
-    setTimeout(enableButtons, 1000);
+    setTimeout(enableButtons, 3000);
 }
 
 function prevImage() {
     disableButtons();
+    leftSection.classList.remove('fade-in');
+    rightSection.classList.remove('fade-in');
+
     currentIndex = (currentIndex - 1 + leftImages.length) % leftImages.length;
     changeBackground();
     resetTimer();
-    setTimeout(enableButtons, 1000);
+    setTimeout(enableButtons, 3000);
 }
+
 
 function resetTimer() {
     clearInterval(timer);
@@ -100,6 +125,7 @@ function enableButtons() {
 }
 
 nextImage();
+setInterval(changeHeader, 5000);
 
 nextButton.addEventListener("click", nextImage);
 prevButton.addEventListener("click", prevImage);

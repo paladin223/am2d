@@ -113,6 +113,13 @@ if (document.getElementsByClassName('main_footer_call').length > 0) {
     });
 }
 
+if (document.getElementsByClassName('order_project').length > 0) {
+    document.getElementsByClassName('order_project')[0].addEventListener('click', function() {
+        const section = document.getElementsByClassName('project_request')[0];
+        smoothScrollTo(section.offsetTop, 1000); // Прокрутка к секции за 1000 мс
+    });
+}
+
 function smoothScrollTo(target, duration) {
     const start = window.scrollY; // Текущая позиция прокрутки
     const distance = target - start; // Расстояние до цели

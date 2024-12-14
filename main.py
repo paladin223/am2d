@@ -14,10 +14,10 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="pages")
-projects = ["bani", "shibui", "skuratov", "village"]
+projects = ["eli", "shibui", "skuratov", "village"]
 
 projects_name = {
-    "bani": "Лесные бани",
+    "eli": "Лесные бани",
     "shibui": "Ресторан Shibui",
     "skuratov": 'Кофейня "Skuratov"',
     "village": 'Проект загародного комплекса "Батон"',
@@ -29,15 +29,16 @@ projects_name = {
 
 @app.get("/", response_class=JSONResponse)
 async def read_root(request: Request):
-    nav_photo = random.choice(projects)
-    main_photo = projects[(projects.index(nav_photo) + 1) % 4]
+    header_photo = [f"/static/img/header/{i}.webp" for i in range(1, 9)]
     left_images = []
     right_images = []
 
     for name in projects:
-        left_images.append([f"/static/img/{name}/3.webp", projects_name[name]])
+        left_images.append(
+            [f"/static/img/section/{name}_left.webp", projects_name[name]]
+        )
         right_images.append(
-            [f"/static/img/{name}/4.webp", projects_name[name]]
+            [f"/static/img/section/{name}_right.webp", projects_name[name]]
         )
 
     return templates.TemplateResponse(
@@ -45,9 +46,7 @@ async def read_root(request: Request):
         {
             "title": "am2d",
             "request": request,
-            "nav_photo": nav_photo,
-            "main_photo": main_photo,
-            "main_project_name": projects_name[main_photo],
+            "header_photo": header_photo,
             "left_images": left_images,
             "right_images": right_images,
         },

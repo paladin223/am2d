@@ -83,10 +83,10 @@ header {
     background-position: center;
     width: 100%;
     height: 100vh;
-    transition: background-position 0.5s ease, opacity 1s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: background-image 3s ease;
     /* opacity: 0; */
 }
 
@@ -169,7 +169,8 @@ nav {
 
 .header_make_order_button {
     font-family: 'TTCommons-Bold';
-    color: #EAE4D6;
+    background-color: #EAE4D6;
+    color: #1F201F;
     border: 3px solid #EAE4D6;
     font-size: clamp(18px, 4vw, 23px);
     border-radius: 40px;
@@ -179,10 +180,10 @@ nav {
     transition: background-color 0.5s ease;
 }
 
-.header_make_order_button:hover {
+/* .header_make_order_button:hover {
     background-color: #EAE4D6;
     color: #333;
-}
+} */
 
 .header_make_order_button span {
     text-align: center;
@@ -201,8 +202,8 @@ main {
     justify-content: flex-end;
     align-items: left;
     flex-direction: column;
-    padding: 0 0 30px 30px;
-    background-image: url("../img/main_left.jpg");
+    padding: 30px;
+    background-image: url('../img/main/1.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -211,11 +212,11 @@ main {
 .main_left_project_name {
     font-size: 50px;
     font-family: 'TTCommons-Bold';
-    color: #1F201F;
+    color: #ffffff;
 }
 
 .main_left_project_description {
-    color: #1F201F;
+    color: #ffffff;
     font-size: 30px;
 }
 
@@ -261,6 +262,10 @@ section {
     position: relative; 
 }
 
+.section_left, .section_right {
+    transition: opacity 1s ease-in-out; /* Плавный переход для opacity */
+}
+
 .section_left {
     width: 30%;
     display: flex;
@@ -270,7 +275,6 @@ section {
     padding: 30px;
     background-size: cover;
     background-position: center;
-    transition: background-image 1s ease-in-out;
     margin-right: 1px;
 }
 
@@ -282,12 +286,11 @@ section {
     padding: 30px;
     background-size: cover; 
     background-position: center; 
-    transition: background-image 1s ease;
 }
 
 .section_left_project_name,
 .section_left_project_description {
-    color: #1F201F;
+    color: #b8b8b8;
     margin-bottom: 10px;
 }
 
@@ -310,7 +313,8 @@ section {
     border-radius: 40px;
     font-size: 20px;
     font-family: 'TTCommons-Bold';
-    color: black;
+    color: #1F201F;
+    background-color: #EAE4D6;
 }
 
 .prev, .next {
@@ -459,7 +463,8 @@ section {
     font-family: TTCommons;
     font-size: 14px;
     border-radius: 20px 20px 0 20px;
-    background-color: #EAE4D6;
+    background-color: #ffffff;
+    color: #1F201F;
     text-align: center;
 }
 
@@ -502,9 +507,9 @@ section {
     width: 25%;
     height: 15%;
     margin-left: 25%;
-    background-color: #1F201F;
+    background-color: #EAE4D6;
     border: 2px solid #EAE4D6;
-    color: #EAE4D6;
+    color: #1F201F;
     border-radius: 20px;
     cursor: pointer;
 }
@@ -603,12 +608,6 @@ footer {
     /* header */
     nav {
         width: 80%;
-    }
-
-    .nav_button{
-        font-size: clamp(17px, 3vw, 20px);
-        background-color: #EAE4D6;
-        color: #1F201F;
     }
 
     .header_make_order_button {
@@ -711,6 +710,7 @@ footer {
         border-radius: 20px 20px 0 20px;
         background-color: #EAE4D6;
         text-align: center;
+        color: #1F201F;
     }
 
     .submit_form div {
