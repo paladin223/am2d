@@ -7,6 +7,10 @@
     color: inherit;
 }
 
+a {
+    cursor: pointer;
+}
+
 @keyframes rotate {
     from {
         transform: rotate(0deg); /* Начальная позиция */
@@ -43,6 +47,10 @@
     font-style: normal;
 }
 
+ul {
+    list-style-type: none; /* Убираем маркеры у списка */
+}
+
 .loadingOverlay {
     position: fixed;
     top: 0;
@@ -61,7 +69,7 @@
 }
 
 .loadingOverlay img {
-    max-width: 370px;
+    max-width: 270px;
     animation: rotate 2s linear infinite;
 }
 
@@ -86,7 +94,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: background-image 3s ease;
+    transition: background-image 1s linear;
     /* opacity: 0; */
 }
 
@@ -142,15 +150,16 @@ nav {
     max-width: 116px;
     width: 100%;
     text-align: center;
-    cursor: pointer;
     padding: 6px 0 0 0;
     transition: background-color 0.5s ease;    
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .nav_button:hover {
     background-color: #EAE4D6;
     color: #1F201F;
+    cursor: pointer;
 }
 
 .white_nav{
@@ -251,7 +260,7 @@ main {
 .main_right_button:hover {
     background-color: #1F201F;
     color: #EAE4D6;
-    transition: background-color 0.5s ease;
+    transition: background-color 0.25s ease;
 }
 
 section {
@@ -263,7 +272,7 @@ section {
 }
 
 .section_left, .section_right {
-    transition: opacity 1s ease-in-out; /* Плавный переход для opacity */
+    transition: background-image 1s ease;
 }
 
 .section_left {
@@ -284,7 +293,7 @@ section {
     align-items: flex-end;
     justify-content: flex-end;
     padding: 30px;
-    background-size: cover; 
+    background-size: cover;
     background-position: center; 
 }
 

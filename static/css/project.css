@@ -1,0 +1,235 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    opacity: 1;
+    display: flex !important;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.project {
+    height: 1800px;
+    display: flex;
+    flex-direction: row;
+    background-color: #EAE4D6;
+}
+
+.project_left {
+    flex: 1 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+    justify-content: left;
+    gap: 1%;
+}
+
+.project_right {
+    flex: 1 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+}
+
+.project_left div {
+    height: 29%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.project_left div:nth-child(1) {
+    height: 19%;
+}
+
+.project_left div .name {
+    font-family: TTCommons-bold;
+    font-size: 30px;
+    height: 10%;
+}
+.project_left div:nth-child(1) .name {
+    height: 10%;
+}
+
+.project_left div .description {
+    height: 90%;
+    font-family: TTCommons;
+    font-size: 19px;
+}
+
+.project_left div:nth-child(1) .description {
+    height: 10%;
+    font-family: TTCommons-Thin;
+    padding-top: 10px;
+    font-size: 30px;
+}
+
+.project_left div:nth-child(1) ul {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.project_left div:nth-child(1) li {
+    font-family: TTCommons-Thin;
+}
+
+.plan {
+    max-width: 70%;
+    height: auto !important;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+.plan img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.project_left div:nth-child(4) {
+    height: 19%;
+}
+
+.project_left div:nth-child(4) .name {
+    height: 10%;
+}
+
+.project_left div:nth-child(4) ul {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.project_left div:nth-child(4) li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    padding: 12px 10px 7px 10px;
+    border: 2px solid #1F201F;
+    border-radius: 20px;
+}
+
+.project_right div {
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.top {
+    height: 23%;
+}
+
+.middle {
+    height: 48%;
+}
+
+.down {
+    height: 23%;
+}
+
+.project_right div {
+    transition: background-image 1s ease;
+    background-size: cover;
+    background-position: center;
+}
+
+.another {
+    height: 100px;
+    display: flex;
+}
+
+.another a {
+    flex: 1 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: TTCommons-bold;
+    font-size: 20px;
+    border-top: 1px solid #1F201F;
+    transition: background-color 0.5s ease;
+}
+
+.another a:nth-child(1) {
+    border-right: 1px solid #1F201F;;
+}
+
+.another a:hover {
+    cursor: pointer;
+    background-color: #1F201F;
+    color: #EAE4D6;
+}
+
+.carousel {
+    display: none;
+}
+
+@media (max-width: 1000px) {
+    .plan {
+        max-width: 100% !important;
+    }
+
+    .project {
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+    .project {
+        height: auto;
+    }
+    .project_left, .project_right {
+        flex: 1 1 100%; 
+    }
+    .project_left{
+        gap: 50px;
+        margin-bottom: 50px;
+    }
+    .project_left div:nth-child(4) ul {
+        gap: 10px;
+    }
+    .project_left div:nth-child(4) li {
+        width: 100%;
+    }
+    .project_right {
+        height: 400px;
+        width: 100%;
+        padding: 0 5%;
+    }
+    
+    .carousel {
+        display: block;
+        height: 100% !important;
+        width: 100%;
+        border-radius: 10px;
+    }
+    .top {
+        display: none;
+    }
+    .middle {
+        display: none;
+    }
+    .down {
+        display: none;
+    }
+}

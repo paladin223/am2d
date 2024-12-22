@@ -49,6 +49,7 @@ main {
     border-radius: 15px;
     background-color: #1F201F;
     color: #EAE4D6;
+    cursor: pointer;
 }
 
 .about_main_right {

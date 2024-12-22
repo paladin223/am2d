@@ -35,10 +35,14 @@ async def read_root(request: Request):
 
     for name in projects:
         left_images.append(
-            [f"/static/img/section/{name}_left.webp", projects_name[name]]
+            [f"/static/img/section/{name}_left.webp",
+             projects_name[name],
+             name]
         )
         right_images.append(
-            [f"/static/img/section/{name}_right.webp", projects_name[name]]
+            [f"/static/img/section/{name}_right.webp",
+             projects_name[name],
+             name]
         )
 
     return templates.TemplateResponse(
@@ -102,3 +106,43 @@ async def submit(order: schemas.Order):
         else:
             print(f"500 in /submit {order}")
     return crud.add_order(order)
+
+
+@app.get("/projects/{name}", response_class=JSONResponse)
+async def get_project(name: str, request: Request):
+    up = [
+        f"/static/img/{name}/1.webp",
+        f"/static/img/{name}/2.webp",
+    ]
+    middle = [
+        f"/static/img/{name}/4.webp",
+        f"/static/img/{name}/5.webp",
+        f"/static/img/{name}/6.webp"
+    ]
+    down = [
+        f"/static/img/{name}/7.webp",
+        f"/static/img/{name}/8.webp",
+    ]
+    if name not in projects_name:
+        return JSONResponse(content={"error": "Проект не найден"},
+                            status_code=404)
+    template = ""
+    if name == "skuratov":
+        template = "skuratov.html"
+    elif name == "eli":
+        template = "eli.html"
+    elif name == "shibui":
+        template = "shibui.html"
+    elif name == "village":
+        template = "village.html"
+    return templates.TemplateResponse(
+        template,
+        {
+            "up": up,
+            "middle": middle,
+            "down": down,
+            "request": request,
+            "project": name,
+            "title": "am2d",
+        },
+    )

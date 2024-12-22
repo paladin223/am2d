@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <meta name="description" content="Краткое описание страницы">
+  <link rel="stylesheet" href="../static/css/project.css">
+  <link rel="stylesheet" href="../static/css/all.css">
+  <script src="../static/js/scripts_all.js" defer></script>
+  <script>
+    const upImage = {{ up|tojson }};
+    const middleImage = {{ middle|tojson }};
+    const downImage = {{ down|tojson }};
+    const project = "{{ project }}";
+  </script>
+  <script src="../static/js/project.js" defer></script>
+</head>
+<body class="white_body">
+  <div class="loadingOverlay">
+    <img src="../static/img/logo_dark.png">
+    Loading
+  </div>
+  <div class="contentData">
+    <header class="black_header">{% include 'nav_black.html' %}</header>
+    <main class="project">
+      <div class="project_left">
+        <div>
+          <div class="name">SKURATOV</div>
+          <div class="description">Кофейня</div>
+          <ul>
+            <li>• Студия: AM2Design</li>
+            <li>• Дизайнеры: Лев Мошенкин, Злата Абрамова</li>
+            <li>• Фото: Иван Иванов</li>
+            <li>• Расположение: Санкт-Петербург, Россия</li>
+            <li>• Площадь: 210 м²</li>
+            <li>• Год: 2024</li>
+            <li>• Категория: бани</li>
+          </ul>
+        </div>
+        <div>
+          <div class="name">СПРОЕКТИРОВАЛИ ИНФРАСТРУКТУРУ И ПОЛУЧИЛИ ПРЕМИЮ "ПОСЕЛОК ГОДА"</div>
+          <div class="description">
+            Команда ЕЛИ ESTATE обратилась к нам с амбициозной задачей — создать инфраструктуру поселка, где каждый житель сможет отдыхать, заниматься спортом и проводить время с семьей, не выходя за его пределы. Мы с энтузиазмом принялись за эту работу.
+            <br>
+            Многие застройщики сталкиваются с отсутствием четкой концепции, из-за чего проект может быть плохо реализован. Мы начали с разработки грамотной концепции, которая переросла в крупную стройку
+            <br>
+            Разработали и предложили:
+            <br>
+            • Эффектный и функциональный дизайн рекреационных зон — спроектировали спа-комплекс, спортивные площадки, детские зоны, места для отдыха.
+            <br>
+            • Экологичный подход — создали инфраструктуру, гармонирующую с природой.
+            <br>
+            • Удобство для каждого жителя — больше нет необходимости строить дополнительные зоны отдыха или спорта на своем участке, все уже построено за Вас на территории поселка.
+            <br>
+            Результат не заставил долго ждать. Пространство стало визитной карточкой поселка. Совместная работа с ЕЛИ ESTATE привела нас к премии “Поселок года”, а жители уже могут наслаждаться продуманной инфраструктурой.
+            <br>
+            Хотите, чтобы ваш проект тоже стал образцом комфорта и эффективности? Давайте создадим дизайн, который поможет вашему бизнесу расти!
+          </div>
+        </div>
+      </div>
+      <div class="project_right">
+        <div class="carousel"></div>
+        <div class="top"></div>
+        <div class="middle"></div>
+        <div class="down"></div>
+      </div>
+    </main>
+    <div class="another">
+      <a href="/projects/shibui"><div>Предыдущий проект</div></a>
+      <a href="/projects/skuratov"><div>Следующий проект</div></a>
+    </div>
+    <div class="project_request">{% include 'project_request.html' %}</div>
+    <footer>{% include 'footer.html' %}</footer>
+  </div>
+  <div id="myModal" class="modal">
+    <img class="modal-content" id="img01">
+  </div>
+</body>
+</html>

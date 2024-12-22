@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <meta name="description" content="Краткое описание страницы">
+  <link rel="stylesheet" href="../static/css/project.css">
+  <link rel="stylesheet" href="../static/css/all.css">
+  <script src="../static/js/scripts_all.js" defer></script>
+  <script>
+    const upImage = {{ up|tojson }};
+    const middleImage = {{ middle|tojson }};
+    const downImage = {{ down|tojson }};
+    const project = "{{ project }}";
+  </script>
+  <script src="../static/js/project.js" defer></script>
+</head>
+<body class="white_body">
+  <div class="loadingOverlay">
+    <img src="../static/img/logo_dark.png">
+    Loading
+  </div>
+  <div class="contentData">
+    <header class="black_header">{% include 'nav_black.html' %}</header>
+    <main class="project">
+      <div class="project_left">
+        <div>
+          <div class="name">SKURATOV</div>
+          <div class="description">Кофейня</div>
+          <ul>
+            <li>• Студия: AM2Design</li>
+            <li>• Дизайнеры: Лев Мошенкин, Злата Абрамова</li>
+            <li>• Фото: Иван Иванов</li>
+            <li>• Расположение: Санкт-Петербург, Россия</li>
+            <li>• Площадь: 210 м²</li>
+            <li>• Год: 2024</li>
+            <li>• Категория: дизайн общественных пространств</li>
+          </ul>
+        </div>
+        <div>
+          <div class="name">ПРОДУМАЛИ КОНЦЕПТУАЛЬНУЮ КОФЕЙНЮ</div>
+          <div class="description">
+          Когда мы начали работу над концептуальным проектом для кофейни “Skuratov” в Санкт-Петербурге, перед нами стояла сложная задача: сохранить фирменный визуальный код бренда, но привнести уникальную атмосферу, которая отразит характер заведения.
+          Мы детально изучили философию “Skuratov” - это пространство, где хочется остановиться и просидеть весь день.
+          Что мы сделали?
+          <br>
+          <br>
+          • Создали дизайн, который подчеркивает идентичность бренда, но адаптирован к эстетике помещения, где находится кофейня.
+          <br>
+          • Продумали эргономику пространства: комфортные зоны для работы, отдыха и общения.
+          <br>
+          • Добавили акценты, которые запоминаются, делая кофейню не только уютной, но и визуально эффектной.
+          <br>
+          <br>
+          Мы не только справились с задачей, но и получили положительный фидбек от “Skuratov”.
+          Хотите, чтобы ваша кофейня тоже выделялась? Напишите нам, и мы создадим пространство, которое говорит за вас!
+          </div>
+        </div>
+        <div>
+          <div class="name">ПЛАН 1 ЭТАЖА</div>
+          <div class="plan"></div>
+        </div>
+        <div>
+          <div class="name">ЭКСПЛИКАЦИЯ ПЛАНА</div>
+          <ul>
+            <li><div>1. Зал</div><div>75м²</div></li>
+            <li><div>2. Санузел</div><div>5м²</div></li>
+            <li><div>3. Тамбур</div><div>7м²</div></li>
+            <li><div>4. Кухня</div><div>25м²</div></li>
+            <li><div>5. Гардероб</div><div>8м²</div></li>
+          </ul>
+        </div>
+      </div>
+      <div class="project_right">
+        <div class="carousel"></div>
+        <div class="top"></div>
+        <div class="middle"></div>
+        <div class="down"></div>
+      </div>
+    </main>
+    <div class="another">
+      <a href="/projects/village"><div>Предыдущий проект</div></a>
+      <a href="/projects/eli"><div>Следующий проект</div></a>
+    </div>
+    <div class="project_request">{% include 'project_request.html' %}</div>
+    <footer>{% include 'footer.html' %}</footer>
+  </div>
+  <div id="myModal" class="modal">
+    <img class="modal-content" id="img01">
+  </div>
+</body>
+</html>

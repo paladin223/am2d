@@ -51,8 +51,6 @@ const rightSection = document.getElementsByClassName("section_right")[0];
 const header = document.getElementsByTagName("header")[0];
 const prevButton = document.querySelector('.prev');
 const nextButton = document.querySelector('.next');
-leftSection.classList.add('fade');
-rightSection.classList.add('fade');
 
 function updateBackgroundPosition() {
     const imageBlock = document.querySelector('header');
@@ -73,34 +71,23 @@ function changeHeader() {
 }
 
 function changeBackground() {
-    leftSection.style.opacity = 0
-    rightSection.style.opacity = 0
-
-    setTimeout(() => {
-        leftSection.style.backgroundImage = `url(${leftImages[currentIndex][0]})`;
-        leftSection.getElementsByClassName("section_left_project_name")[0].innerHTML = leftImages[currentIndex][1];
-        rightSection.style.backgroundImage = `url(${rightImages[currentIndex][0]})`;
-    }, 1000);
-
-    setTimeout(() => {
-        leftSection.style.opacity = 1
-        rightSection.style.opacity = 1
-    }, 1000);
+    leftSection.style.backgroundImage = `url(${leftImages[currentIndex][0]})`;
+    sleep(500)
+    leftSection.getElementsByClassName("section_left_project_name")[0].innerHTML = leftImages[currentIndex][1];
+    rightSection.getElementsByTagName("a")[0].href = `/projects/${leftImages[currentIndex][2]}`;
+    rightSection.style.backgroundImage = `url(${rightImages[currentIndex][0]})`;
 }
 
 function nextImage() {
     disableButtons();
-
     currentIndex = (currentIndex + 1) % leftImages.length;
     changeBackground();
     resetTimer();
-    setTimeout(enableButtons, 3000);
+    setTimeout(enableButtons, 1000);
 }
 
 function prevImage() {
     disableButtons();
-    leftSection.classList.remove('fade-in');
-    rightSection.classList.remove('fade-in');
 
     currentIndex = (currentIndex - 1 + leftImages.length) % leftImages.length;
     changeBackground();

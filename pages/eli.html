@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }}</title>
+  <meta name="description" content="Краткое описание страницы">
+  <link rel="stylesheet" href="../static/css/project.css">
+  <link rel="stylesheet" href="../static/css/all.css">
+  <script src="../static/js/scripts_all.js" defer></script>
+  <script>
+    const upImage = {{ up|tojson }};
+    const middleImage = {{ middle|tojson }};
+    const downImage = {{ down|tojson }};
+    const project = "{{ project }}";
+  </script>
+  <script src="../static/js/project.js" defer></script>
+</head>
+<body class="white_body">
+  <div class="loadingOverlay">
+    <img src="../static/img/logo_dark.png">
+    Loading
+  </div>
+  <div class="contentData">
+    <header class="black_header">{% include 'nav_black.html' %}</header>
+    <main class="project">
+      <div class="project_left">
+        <div>
+          <div class="name">SKURATOV</div>
+          <div class="description">Кофейня</div>
+          <ul>
+            <li>• Студия: AM2Design</li>
+            <li>• Дизайнеры: Лев Мошенкин, Злата Абрамова</li>
+            <li>• Фото: Иван Иванов</li>
+            <li>• Расположение: Санкт-Петербург, Россия</li>
+            <li>• Площадь: 210 м²</li>
+            <li>• Год: 2024</li>
+            <li>• Категория: бани</li>
+          </ul>
+        </div>
+        <div>
+          <div class="name">СОЗДАЛИ БАННЫЙ КОМЛЕКС, КОТОРЫЙ ПЕРЕНОСИТ ВАС В ЛЕСНУЮ ЧАЩУ</div>
+          <div class="description">
+            Команда поселка ЕЛИ ESTATE давно мечтала о месте, где можно отключиться от суеты, забыть о шуме города и почувствовать себя частью природы. Возникла идея банного комплекса.
+            <br>
+            Времени на проектирование было мало, четкой концепции не было. Мы быстро подключились к задаче и начали проектирование.
+            <br>
+              • Проанализировали природный ландшафт поселка, чтобы комплекс выглядел естественно в окружающей среде.
+              <br>
+              • За неделю разработали проект, отражающий дух природы и отвечающий всем запросам клиента.
+              <br>
+              • Добавили уникальные решения, где каждая деталь — от отделки до освещения — отражает миссию и визуальный код поселка.
+            <br>
+            Проект согласован и уже на стадии реализации. Жители скоро смогут наслаждаться банным комплексом, который стал новым местом для отдыха на территории поселка.
+            <br>
+            Хотите, чтобы ваш проект так же быстро приносил результат и прибыль? Напишите нам, и мы реализуем любые идеи с заботой о вашем времени!
+          </div>
+        </div>
+      </div>
+      <div class="project_right">
+        <div class="carousel"></div>
+        <div class="top"></div>
+        <div class="middle"></div>
+        <div class="down"></div>
+      </div>
+    </main>
+    <div class="another">
+      <a href="/projects/skuratov"><div>Предыдущий проект</div></a>
+      <a href="/projects/shibui"><div>Следующий проект</div></a>
+    </div>
+    <div class="project_request">{% include 'project_request.html' %}</div>
+    <footer>{% include 'footer.html' %}</footer>
+  </div>
+  <div id="myModal" class="modal">
+    <img class="modal-content" id="img01">
+  </div>
+</body>
+</html>
