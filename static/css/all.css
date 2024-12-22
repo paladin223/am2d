@@ -183,16 +183,11 @@ nav {
     border: 3px solid #EAE4D6;
     font-size: clamp(18px, 4vw, 23px);
     border-radius: 40px;
-    padding: 1.75% 3% 1.75% 3%;
+    padding: 1.75% 3% 1.25% 3%;
     margin: auto 0 50px 0;
     cursor: pointer;
     transition: background-color 0.5s ease;
 }
-
-/* .header_make_order_button:hover {
-    background-color: #EAE4D6;
-    color: #333;
-} */
 
 .header_make_order_button span {
     text-align: center;
@@ -244,6 +239,11 @@ main {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.main_right a {
+    display: flex;
+    justify-content: center;
 }
 
 .main_right_button {

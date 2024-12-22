@@ -41,7 +41,7 @@ async function init() {
     await sleep(1000);
     // Скрыть затемнение и показать контент
     document.getElementsByClassName('loadingOverlay')[0].style.display = 'none';
-    await sleep(1000);
+    await sleep(100);
     document.getElementsByClassName('contentData')[0].style.opacity = 1;
   } catch (error) {
     console.error(error);

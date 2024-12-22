@@ -30,7 +30,8 @@
 }
 
 .project {
-    height: 1800px;
+    min-height: 1800px;
+    height: auto;
     display: flex;
     flex-direction: row;
     background-color: #EAE4D6;
@@ -110,6 +111,19 @@
 
 .project_left div:nth-child(4) {
     height: 19%;
+}
+
+.project_left div:nth-child(2) {
+    height: auto;
+}
+
+.project_left div:nth-child(2) .name {
+    height: auto;
+}
+
+.project_left div:nth-child(2) .description {
+    margin-top: 20px;
+    height: auto;
 }
 
 .project_left div:nth-child(4) .name {
