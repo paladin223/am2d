@@ -2,12 +2,14 @@ version: '3.8'
 
 services:
   db:
-    image: postgres:13
+    image: postgres:latest
     restart: always
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_INITDB_ARGS: --auth-host=trust
     ports:
       - "5432:5432"
 
@@ -41,16 +43,16 @@ services:
       - ./certbot/www/:/var/www/certbot/:rw
       - ./certbot/conf/:/etc/letsencrypt/:rw
 
-  # bot:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile.bot
-  #   ports:
-  #     - "8001:8001"
-  #   depends_on:
-  #     - db
-  #   environment:
-  #     TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile.bot
+    ports:
+      - "8001:8001"
+    depends_on:
+      - db
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
 
 volumes:
   certs:

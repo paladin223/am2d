@@ -1,9 +1,19 @@
 let imagesToPreload = [...leftImages, ...rightImages, ...headerImages];
+// let imagesToPreload = [...leftImages, ...headerImages];
 console.log(imagesToPreload)
 let preloadedImages = [];
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+let currentIndexHeader = 0;
+let timer;
+
+function changeHeader() {
+    currentIndexHeader = (currentIndexHeader + 1) % headerImages.length;
+    header.style.backgroundImage = `url(${headerImages[currentIndexHeader]})`;
 }
 
 
@@ -31,9 +41,10 @@ function preloadImages() {
 async function init() {
     try {
         await preloadImages();
-        await sleep(1000);
+        changeHeader();
+        setInterval(changeHeader, 5000);
         document.getElementsByClassName('loadingOverlay')[0].style.display = 'none';
-        await sleep(1000);
+        await sleep(500);
         document.getElementsByClassName('contentData')[0].style.opacity = 1;
     } catch (error) {
         console.error(error);
@@ -44,8 +55,6 @@ async function init() {
 init();
 
 let currentIndex = 0;
-let currentIndexHeader = 0;
-let timer;
 const leftSection = document.getElementsByClassName("section_left")[0];
 const rightSection = document.getElementsByClassName("section_right")[0];
 const header = document.getElementsByTagName("header")[0];
@@ -64,11 +73,6 @@ function updateBackgroundPosition() {
 
 updateBackgroundPosition();
 window.addEventListener('resize', updateBackgroundPosition);
-
-function changeHeader() {
-    currentIndexHeader = (currentIndexHeader + 1) % headerImages.length;
-    header.style.backgroundImage = `url(${headerImages[currentIndexHeader]})`;
-}
 
 function changeBackground() {
     leftSection.style.backgroundImage = `url(${leftImages[currentIndex][0]})`;
@@ -111,8 +115,7 @@ function enableButtons() {
     nextButton.disabled = false;
 }
 
-nextImage();
-setInterval(changeHeader, 5000);
+nextImage()
 
 nextButton.addEventListener("click", nextImage);
 prevButton.addEventListener("click", prevImage);

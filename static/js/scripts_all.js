@@ -65,6 +65,13 @@ updatePlaceholder();
 document.getElementById('contactForm').addEventListener('submit', async function(event) {
     event.preventDefault(); // Предотвращаем стандартное поведение формы
 
+    // Проверяем, отмечена ли радиокнопка
+    const isAgreed = document.querySelector('input[name="soglasie152"]:checked');
+    if (!isAgreed) {
+        alert('Пожалуйста, согласитесь на обработку своих персональных данных.');
+        return; // Прерываем выполнение, если радиокнопка не отмечена
+    }
+
     // Собираем данные из формы
     const name = document.querySelector('#contact_form_name').value;
     const email = document.querySelector('#contact_form_email').value;
@@ -93,11 +100,28 @@ document.getElementById('contactForm').addEventListener('submit', async function
         }
 
         const result = await response.json();
-        console.log(result)
+        console.log(result);
+
+        // Отображаем модальное окно при успешной отправке
+        document.getElementById('successModal').style.display = 'block';
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 });
+
+// Закрытие модального окна
+document.getElementById('closeModal').addEventListener('click', function() {
+    document.getElementById('successModal').style.display = 'none';
+});
+
+// Закрытие модального окна при клике вне его
+window.addEventListener('click', function(event) {
+    const modal = document.getElementById('successModal');
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
 
 if (document.getElementsByClassName('header_make_order_button').length > 0) {
     document.getElementsByClassName('header_make_order_button')[0].addEventListener('click', function() {
