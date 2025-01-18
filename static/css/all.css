@@ -514,6 +514,7 @@ section {
     border-radius: 20px 20px 0 20px;
     background-color: #ffffff;
     color: #1F201F;
+    border: 2px solid #1F201F;
     text-align: center;
 }
 

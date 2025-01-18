@@ -20,7 +20,14 @@ projects_name = {
     "eli": "Лесные бани",
     "shibui": "Ресторан Shibui",
     "skuratov": 'Кофейня "Skuratov"',
-    "village": 'Проект загародного комплекса "Батон"',
+    "village": "Поселок Ели Estate",
+}
+
+projects_description = {
+    "eli": "Разработка банного комплекса для Eli Estate",
+    "shibui": "Ресторан японской кухни",
+    "skuratov": "Кофейня концептуальный проект кофейни Санкт-Петербурга",
+    "village": "Разработка урабанистики для Ели Estate",
 }
 
 # crud.drop_tables()
@@ -28,7 +35,7 @@ projects_name = {
 
 
 @app.get("/", response_class=JSONResponse)
-async def read_root(request: Request):
+async def index(request: Request):
     header_photo = [f"/static/img/header/{i}.webp" for i in range(1, 9)]
     left_images = []
     right_images = []
@@ -37,12 +44,14 @@ async def read_root(request: Request):
         left_images.append(
             [f"/static/img/section/{name}_left.webp",
              projects_name[name],
-             name]
+             name,
+             projects_description[name]]
         )
         right_images.append(
             [f"/static/img/section/{name}_right.webp",
              projects_name[name],
-             name]
+             name,
+             projects_description[name]]
         )
 
     return templates.TemplateResponse(

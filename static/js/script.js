@@ -78,6 +78,7 @@ function changeBackground() {
     leftSection.style.backgroundImage = `url(${leftImages[currentIndex][0]})`;
     sleep(500)
     leftSection.getElementsByClassName("section_left_project_name")[0].innerHTML = leftImages[currentIndex][1];
+    leftSection.getElementsByClassName("section_left_project_description")[0].innerHTML = leftImages[currentIndex][3];
     rightSection.getElementsByTagName("a")[0].href = `/projects/${leftImages[currentIndex][2]}`;
     rightSection.style.backgroundImage = `url(${rightImages[currentIndex][0]})`;
 }
