@@ -9,6 +9,7 @@ import httpx
 
 import crud
 import schemas
+from database import init_db
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -30,8 +31,10 @@ projects_description = {
     "village": "Разработка урабанистики для Ели Estate",
 }
 
-# crud.drop_tables()
-# crud.create_tables()
+# Initialize database on startup
+@app.on_event("startup")
+async def startup_event():
+    init_db()
 
 
 @app.get("/", response_class=JSONResponse)
