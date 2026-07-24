@@ -1,8 +1,12 @@
 # AM2D
 
+![Интерьер проекта AM2D](image.png)
+
 Сайт архитектурной студии AM2D с портфолио, формой заявки и уведомлениями
 в Telegram. Приложение работает на FastAPI, страницы формируются через
 Jinja2, а заявки сохраняются в PostgreSQL.
+
+Telegram: [@am2design](https://t.me/am2design)
 
 ## Состав проекта
 
@@ -21,7 +25,13 @@ Jinja2, а заявки сохраняются в PostgreSQL.
 
 ## Настройка окружения
 
-Создайте в корне проекта файл `.env`:
+Скопируйте пример окружения и при необходимости отредактируйте значения:
+
+```bash
+cp .env.example .env
+```
+
+Пример содержимого `.env`:
 
 ```dotenv
 DB_HOST=db
@@ -36,32 +46,62 @@ DOMAIN_URL=am2design.ru
 DOMAIN_EMAIL=admin@example.com
 ```
 
-Файл `.env` содержит секреты и уже исключён из Git. Для пароля базы данных
-используйте отдельное стойкое значение.
+Без заполненного `.env` PostgreSQL не запустится: нужен непустой
+`POSTGRES_PASSWORD`. Файл `.env` содержит секреты и уже исключён из Git.
 
-## Запуск
+## Локальный запуск
 
-Соберите образы и запустите сервисы:
+Для разработки достаточно PostgreSQL, сайта и (по желанию) бота.
+Nginx и Certbot локально не нужны: сайт будет доступен на `http://localhost:8000`.
+
+1. Создайте `.env` как выше. Значения `DB_HOST=db` и `DATABASE_URL=...@db:5432/...`
+   подходят для Docker Compose.
+2. Запустите сервисы:
 
 ```bash
-docker compose up -d --build
+docker compose up -d --build db web bot
 ```
 
-Проверить состояние и посмотреть журналы:
+3. Откройте сайт: [http://localhost:8000/about](http://localhost:8000/about)
+
+Полезные команды:
 
 ```bash
 docker compose ps
-docker compose logs -f web bot nginx db
+docker compose logs -f web bot db
+docker compose restart web
+docker compose down
 ```
 
 При запуске `web` и `bot` ждут успешного healthcheck PostgreSQL. Это важно:
 обычный `depends_on` гарантирует только порядок запуска контейнеров, а
 `condition: service_healthy` — готовность PostgreSQL принимать подключения.
 
-Остановить проект:
+Без Docker (если PostgreSQL уже запущен локально):
 
 ```bash
-docker compose down
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements/prod.txt
+# в .env укажите DB_HOST=localhost
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
+
+Для бота отдельно:
+
+```bash
+pip install -r requirements/bot.txt
+python bot.py
+# и в другом терминале:
+uvicorn bot:app2 --host 0.0.0.0 --port 8001 --reload
+```
+
+## Продакшен-запуск
+
+Полный стек с Nginx и HTTPS:
+
+```bash
+docker compose up -d --build
 ```
 
 Перезапустить весь проект или отдельный сервис:

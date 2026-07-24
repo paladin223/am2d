@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY requirements/ /app/requirements
 
-EXPOSE 8000:8000
+EXPOSE 8000
 
 RUN python -m venv /opt/venv
 

@@ -5,6 +5,7 @@ import logging
 from sqlalchemy import create_engine
 from sqlalchemy import Integer
 from sqlalchemy import String
+from sqlalchemy import text
 from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy.orm import mapped_column
 from sqlalchemy.orm import sessionmaker
@@ -28,7 +29,7 @@ def create_engine_with_retry(max_retries=5, retry_delay=2):
             )
             # Test the connection
             with engine.connect() as conn:
-                conn.execute("SELECT 1")
+                conn.execute(text("SELECT 1"))
             logger.info("Successfully connected to database")
             return engine
         except OperationalError as e:
