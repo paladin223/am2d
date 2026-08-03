@@ -1,9 +1,9 @@
 let imagesToPreload = [...upImage, ...middleImage, ...downImage];
 if (project == "skuratov") {
-  imagesToPreload.push(`/static/img/skuratov/${project}.png`);
+  imagesToPreload.push(`${rootPath}/static/img/skuratov/${project}.png`);
 }
 if (project == "shibui") {
-  imagesToPreload.push(`/static/img/shibui/${project}.png`);
+  imagesToPreload.push(`${rootPath}/static/img/shibui/${project}.png`);
 }
 let preloadedImages = [];
 function preloadImages() {
@@ -33,10 +33,10 @@ async function init() {
   try {
     await preloadImages();
     if (project == "skuratov") {
-      document.getElementsByClassName("plan")[0].insertAdjacentHTML("beforeend", `<img src="/static/img/${project}/${project}.png">`);        
+      document.getElementsByClassName("plan")[0].insertAdjacentHTML("beforeend", `<img src="${rootPath}/static/img/${project}/${project}.png">`);        
     }
     if (project == "shibui") {
-      document.getElementsByClassName("plan")[0].insertAdjacentHTML("beforeend", `<img src="/static/img/${project}/${project}.png">`);        
+      document.getElementsByClassName("plan")[0].insertAdjacentHTML("beforeend", `<img src="${rootPath}/static/img/${project}/${project}.png">`);        
     }
     await sleep(1000);
     // Скрыть затемнение и показать контент

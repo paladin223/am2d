@@ -39,19 +39,19 @@ async def startup_event():
 
 @app.get("/", response_class=JSONResponse)
 async def index(request: Request):
-    header_photo = [f"/static/img/header/{i}.webp" for i in range(1, 9)]
+    header_photo = [str(request.url_for("static", path=f"img/header/{i}.webp")) for i in range(1, 9)]
     left_images = []
     right_images = []
 
     for name in projects:
         left_images.append(
-            [f"/static/img/section/{name}_left.webp",
+            [str(request.url_for("static", path=f"img/section/{name}_left.webp")),
              projects_name[name],
              name,
              projects_description[name]]
         )
         right_images.append(
-            [f"/static/img/section/{name}_right.webp",
+            [str(request.url_for("static", path=f"img/section/{name}_right.webp")),
              projects_name[name],
              name,
              projects_description[name]]
@@ -123,17 +123,17 @@ async def submit(order: schemas.Order):
 @app.get("/projects/{name}", response_class=JSONResponse)
 async def get_project(name: str, request: Request):
     up = [
-        f"/static/img/{name}/1.webp",
-        f"/static/img/{name}/2.webp",
+        str(request.url_for("static", path=f"img/{name}/1.webp")),
+        str(request.url_for("static", path=f"img/{name}/2.webp")),
     ]
     middle = [
-        f"/static/img/{name}/4.webp",
-        f"/static/img/{name}/5.webp",
-        f"/static/img/{name}/6.webp"
+        str(request.url_for("static", path=f"img/{name}/4.webp")),
+        str(request.url_for("static", path=f"img/{name}/5.webp")),
+        str(request.url_for("static", path=f"img/{name}/6.webp")),
     ]
     down = [
-        f"/static/img/{name}/7.webp",
-        f"/static/img/{name}/8.webp",
+        str(request.url_for("static", path=f"img/{name}/7.webp")),
+        str(request.url_for("static", path=f"img/{name}/8.webp")),
     ]
     if name not in projects_name:
         return JSONResponse(content={"error": "Проект не найден"},
