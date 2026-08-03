@@ -11,6 +11,7 @@
     const rightImages = {{ right_images|tojson }};
     const headerImages = {{ header_photo|tojson }};
     const main_photo = "{{ main_photo }}";
+    const rootPath = "{{ request.scope.get('root_path', '') }}";
   </script>
   <script src="{{ url_for('static', path='js/scripts_all.js') }}" defer></script>
   <script src="{{ url_for('static', path='js/script.js') }}" defer></script>
