@@ -11,7 +11,7 @@ import crud
 import schemas
 from database import init_db
 
-app = FastAPI()
+app = FastAPI(root_path="/am2d")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="pages")
