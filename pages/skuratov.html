@@ -81,8 +81,8 @@
       </div>
     </main>
     <div class="another">
-      <a href="/projects/village"><div>Предыдущий проект</div></a>
-      <a href="/projects/eli"><div>Следующий проект</div></a>
+      <a href="{{ url_for('get_project', name='village') }}"><div>Предыдущий проект</div></a>
+      <a href="{{ url_for('get_project', name='eli') }}"><div>Следующий проект</div></a>
     </div>
     <div class="project_request">{% include 'project_request.html' %}</div>
     <footer>{% include 'footer.html' %}</footer>

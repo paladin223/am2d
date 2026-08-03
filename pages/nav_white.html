@@ -8,6 +8,6 @@
     <div class="nav_button white_nav"><a href="{{ url_for('about') }}">О нас</a></div>
     <div class="nav_button white_nav"><a href="{{ url_for('prices') }}">Услуги</a></div>
     <div class="nav_button white_nav"><a href="{{ url_for('contacts') }}">Контакты</a></div>
-    <div class="nav_button white_nav"><a href="/projects/village">Проекты</a></div>
+    <div class="nav_button white_nav"><a href="{{ url_for('get_project', name='village') }}">Проекты</a></div>
   </div>
 </nav>
