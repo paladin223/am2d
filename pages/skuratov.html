@@ -5,20 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
   <meta name="description" content="Краткое описание страницы">
-  <link rel="stylesheet" href="../static/css/project.css">
-  <link rel="stylesheet" href="../static/css/all.css">
-  <script src="../static/js/scripts_all.js" defer></script>
+  <link rel="stylesheet" href="{{ url_for('static', path='css/project.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', path='css/all.css') }}">
+  <script src="{{ url_for('static', path='js/scripts_all.js') }}" defer></script>
   <script>
     const upImage = {{ up|tojson }};
     const middleImage = {{ middle|tojson }};
     const downImage = {{ down|tojson }};
     const project = "{{ project }}";
   </script>
-  <script src="../static/js/project.js" defer></script>
+  <script src="{{ url_for('static', path='js/project.js') }}" defer></script>
 </head>
 <body class="white_body">
   <div class="loadingOverlay">
-    <img src="../static/img/logo_dark.png">
+    <img src="{{ url_for('static', path='img/logo_dark.png') }}">
     Loading
   </div>
   <div class="contentData">

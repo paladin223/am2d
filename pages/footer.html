@@ -1,5 +1,5 @@
 <div class="footer_logo">
-  <img src="../static/img/light_logo.png" class="footer_logo_img" onclick="window.location.href='{{ url_for('index') }}'">
+  <img src="{{ url_for('static', path='img/light_logo.png') }}" class="footer_logo_img" onclick="window.location.href='{{ url_for('index') }}'">
   <div>AM2DESIGN STUDIO</div></a>
 </div>
 <div class="footer_links">
@@ -16,8 +16,8 @@
 <div class="footer_social">
   <div class="footer_follow">follow</div>
   <div class="footer_social_buttons">
-    <div class="footer_social_button"><img src="../static/img/email_light.png" class="footer_logo_img"></div>
-    <div class="footer_social_button"><img src="../static/img/Instagram_light.png" class="footer_logo_img"></div>
-    <div class="footer_social_button"><img src="../static/img/tg_light.png" class="footer_logo_img"></div>
+    <div class="footer_social_button"><img src="{{ url_for('static', path='img/email_light.png') }}" class="footer_logo_img"></div>
+    <div class="footer_social_button"><img src="{{ url_for('static', path='img/Instagram_light.png') }}" class="footer_logo_img"></div>
+    <div class="footer_social_button"><img src="{{ url_for('static', path='img/tg_light.png') }}" class="footer_logo_img"></div>
   </div>
 </div>
